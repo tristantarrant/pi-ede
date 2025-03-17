@@ -1,0 +1,10 @@
+plugin:
+  name: mod-tap-lv2
+  version: master
+  source:
+    type: git
+    url: https://github.com/mod-audio/tap-lv2.git
+  build:
+    - make -DNO
+  install:
+    - echo INSTALL

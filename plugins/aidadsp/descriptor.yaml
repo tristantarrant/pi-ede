@@ -1,0 +1,9 @@
+plugin:
+  name: aidadsp
+  version: master
+  source:
+    type: git
+    url: https://github.com/AidaDSP/aidadsp-lv2.git
+  build:
+    - make
+  install: trunk/bin

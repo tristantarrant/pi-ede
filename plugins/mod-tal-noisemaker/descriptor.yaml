@@ -1,0 +1,10 @@
+plugin:
+  name: fluida
+  version: master
+  source:
+    type: git
+    url: https://github.com/mod-audio/mod-tal-noisemaker.git
+  build:
+    - make
+  install:
+    - echo INSTALL

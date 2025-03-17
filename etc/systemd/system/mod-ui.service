@@ -1,0 +1,15 @@
+[Unit]
+Description=MOD UI
+Wants=jackd.service
+
+[Service]
+Type=simple
+Environment="MOD_LOG=1"
+ExecStart=/home/tst/src/mod-ui/mod-ui.sh
+StandardOutput=journal+console
+StandardError=journal+console
+StopWhenUnneeded=true
+Restart=always
+User=tst
+SyslogIdentifier=mod-ui
+

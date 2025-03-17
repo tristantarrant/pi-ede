@@ -1,0 +1,10 @@
+plugin:
+  name: ratatouille
+  version: v0.9.9
+  source:
+    type: git
+    url: https://github.com/brummer10/Ratatouille.lv2.git
+  build:
+    - make modapp
+  install:
+    - make install INSTALL_DIR=${TARGET_DIR}

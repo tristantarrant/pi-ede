@@ -1,0 +1,11 @@
+plugin:
+  name: airwindows
+  version: master
+  source:
+    type: git
+    url: https://github.com/hannesbraun/airwindows-lv2.git
+  build:
+    - meson setup build -Dlv2dir=${LV2_DIR}
+    - meson compile -C build
+  install:
+    - meson install -C build

@@ -1,0 +1,11 @@
+plugin:
+  name: blop
+  version: master
+  source:
+    type: git
+    url: http://git.drobilla.net/blop.lv2.git
+  build:
+    - make
+  install:
+    - echo INSTALL
+

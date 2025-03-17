@@ -1,0 +1,22 @@
+plugin:
+  name: remaincalm
+  version: master
+  source:
+    type: git
+    url: https://github.com/remaincalm/dpfports.git
+  build:
+    - rm -rf dpf
+    - git clone https://github.com/DISTRHO/DPF.git dpf --depth=1
+    - ln -sf ../dpf avocado/dpf
+    - ln -sf ../dpf floaty/dpf
+    - ln -sf ../dpf mud/dpf
+    - ln -sf ../dpf paranoia/dpf
+    - make -C avocado/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+    - make -C floaty/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+    - make -C mud/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+    - make -C paranoia/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+  install:
+    - make -C avocado/source install DESTDIR=${TARGET_DIR}
+    - make -C floaty/source install DESTDIR=${TARGET_DIR}
+    - make -C mud/source install DESTDIR=${TARGET_DIR}
+    - make -C paranoia/source install DESTDIR=${TARGET_DIR}

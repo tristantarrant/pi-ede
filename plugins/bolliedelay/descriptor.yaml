@@ -1,0 +1,10 @@
+plugin:
+  name: bolliedelay
+  version: master
+  source:
+    type: git
+    url: https://github.com/MrBollie/bolliedelay.lv2.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}

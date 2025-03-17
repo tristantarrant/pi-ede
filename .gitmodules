@@ -1,0 +1,9 @@
+[submodule "data/mod-lv2-data"]
+	path = data/mod-lv2-data
+	url = https://github.com/moddevices/mod-lv2-data.git
+[submodule "data/lv2-data-creative-commons"]
+	path = data/lv2-data-creative-commons
+	url = https://github.com/moddevices/lv2-data-creative-commons.git
+[submodule "data/patchstorage-lv2-data"]
+	path = data/patchstorage-lv2-data
+	url = https://github.com/patchstorage/patchstorage-lv2-data

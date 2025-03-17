@@ -1,0 +1,10 @@
+plugin:
+  name: gxsunface
+  version: master
+  source:
+    type: git
+    url: https://github.com/brummer10/GxSunFace.lv2.git
+  build:
+    - make mod
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}

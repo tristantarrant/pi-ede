@@ -1,0 +1,13 @@
+diff --git a/src/lv2-plugin.cpp b/src/lv2-plugin.cpp
+index 7a36e1a..3408e95 100644
+--- a/src/lv2-plugin.cpp
++++ b/src/lv2-plugin.cpp
+@@ -88,7 +88,7 @@ struct PluginData {
+             : atom_Int(uridMap->map(uridMap->handle, LV2_ATOM__Int)),
+               bufsize_maxBlockLength(uridMap->map(uridMap->handle, LV2_BUF_SIZE__maxBlockLength))
+            #ifndef __MOD_DEVICES__
+-            , deviceid(uridMap->map(uridMap->handle,"https://falktx.com/plugins/audio-bridge#deviceid")),
++            , deviceid(uridMap->map(uridMap->handle,"https://falktx.com/plugins/audio-bridge#deviceid"))
+             , atom_String(uridMap->map(uridMap->handle, LV2_ATOM__String))
+            #endif
+         {}

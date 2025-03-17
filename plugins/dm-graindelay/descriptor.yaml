@@ -1,0 +1,17 @@
+plugin:
+  name: dm-graindelay
+  version: main
+  source:
+    type: git
+    url: https://github.com/davemollen/dm-graindelay.git
+  build:
+    - rustup default nightly
+    - cd lv2
+    - cargo build --release
+    - cd ..
+    - rustup default stable
+  install:
+    - cd lv2
+    - cp -v target/release/*.so *.lv2
+    - cp -rv *.lv2 ${LV2_DIR}
+    - cd ..

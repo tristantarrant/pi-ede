@@ -1,0 +1,12 @@
+plugin:
+  name: fomp
+  version: main
+  source:
+    type: git
+    url: https://gitlab.com/drobilla/fomp.git
+  build:
+    - cd trunk
+    - ./waf configure --optimization --mod-lv2 --no-lv2-gui --prefix=/usr
+    - ./waf
+  install:
+    - ./waf install --destdir=${TARGET_DIR}

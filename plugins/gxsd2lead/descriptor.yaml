@@ -1,0 +1,10 @@
+plugin:
+  name: gxsd2lead
+  version: master
+  source:
+    type: git
+    url: https://github.com/brummer10/GxSD2Lead.lv2.git
+  build:
+    - make mod
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}

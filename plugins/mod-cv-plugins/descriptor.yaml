@@ -1,0 +1,10 @@
+plugin:
+  name: mod-cv-plugins
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/mod-cv-plugins.git
+  build:
+    - make
+  install:
+    - make install LV2_DESTDIR=${LV2_DIR}

@@ -1,0 +1,19 @@
+[Unit]
+Description=JACK
+After=sound.target
+StopWhenUnneded=true
+
+[Service]
+LimitRTPRIO=95
+LimitMEMLOCK=infinity
+LimitRTTIME=infinity
+Environment="JACK_NO_AUDIO_RESERVATION=1"
+ExecStart=/usr/bin/jackd -R -P 80 -S -t 200 -C /etc/jackd/jack-internal-session.conf -d alsa -p 128 -n 3 -r 48000 -C hw:U192k -P hw:U192k -I 280 -O 280 -X seq
+Restart=always
+User=tst
+IOSchedulingClass=realtime
+IOSchedulingPriority=0
+StandardOutput=journal+console
+StandardError=journal+console
+SyslogIdentifier=jack2
+
