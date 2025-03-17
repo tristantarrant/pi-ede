@@ -1,0 +1,10 @@
+plugin:
+  name: bolliedelayxt
+  version: master
+  source:
+    type: git
+    url: https://github.com/MrBollie/bolliedelayxt.lv2.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}

@@ -1,0 +1,4 @@
+# UMC204HD Vendor=1397 Product=0508
+ACTION=="add", ATTR{idVendor}=="1397", ATTR{idProduct}=="0508", TAG+="systemd", ENV{SYSTEMD_WANTS}="mod-ui.service"
+ACTION=="remove", ATTR{idVendor}=="1397", ATTR{idProduct}=="0508", TAG+="systemd"
+

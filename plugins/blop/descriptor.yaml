@@ -1,0 +1,11 @@
+plugin:
+  name: blop
+  version: main
+  source:
+    type: git
+    url: https://gitlab.com/drobilla/blop-lv2.git
+  build:
+    - meson setup build -Dlv2dir=${LV2_DIR}
+    - meson compile -C build
+  install:
+    - meson install -C build

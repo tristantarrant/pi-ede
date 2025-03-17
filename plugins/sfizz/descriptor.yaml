@@ -1,0 +1,23 @@
+plugin:
+  name: sfizz
+  version: develop
+  source:
+    type: git
+    url: https://github.com/sfztools/sfizz-ui.git
+  build:
+    - cmake -S . -B bin 
+      -DSFIZZ_JACK=OFF
+      -DSFIZZ_RENDER=OFF
+      -DPLUGIN_LV2_PSA=OFF
+      -DPLUGIN_LV2_UI=OFF
+      -DPLUGIN_VST2=OFF
+      -DPLUGIN_VST3=OFF
+      -DSFIZZ_SHARED=OFF
+      -DBUILD_SHARED_LIBS=FALSE
+      -DCOMPILER_SUPPORTS_SYMBOL_MAPS_EXITCODE=1
+      -DCOMPILER_SUPPORTS_SYMBOL_MAPS_EXITCODE__TRYRUN_OUTPUT="FAILED_TO_RUN"
+      -DCMAKE_INSTALL_PREFIX=${PREFIX_DIR}
+      -DCMAKE_BUILD_TYPE=Release
+    - cmake --build bin
+  install:
+    - cmake --install bin --prefix=${PREFIX_DIR}

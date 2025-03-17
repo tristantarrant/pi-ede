@@ -1,0 +1,12 @@
+plugin:
+  name: alo
+  version: master
+  source:
+    type: git
+    url: https://github.com/devcurmudgeon/alo.git
+  build:
+    - cd source
+    - make
+  install:
+    - cd source
+    - make install PREFIX=${PREFIX_DIR}

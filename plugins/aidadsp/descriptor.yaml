@@ -1,0 +1,11 @@
+plugin:
+  name: aidadsp
+  version: main
+  source:
+    type: git
+    url: https://github.com/AidaDSP/aidadsp-lv2.git
+  build:
+    - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release -DGENERIC_AARCH64=ON -DRTNEURAL_XSIMD=ON -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+    - cmake --build bin
+  install:
+    - make -C bin install DESTDIR=${LV2_DIR}

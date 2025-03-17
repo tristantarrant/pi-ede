@@ -1,0 +1,10 @@
+plugin:
+  name: dragonfly-reverb
+  version: 3.2.10
+  source:
+    type: git
+    url: https://github.com/michaelwillis/dragonfly-reverb.git
+  build:
+    - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true
+  install:
+    - cp -r bin/*.lv2 ${LV2_DIR}

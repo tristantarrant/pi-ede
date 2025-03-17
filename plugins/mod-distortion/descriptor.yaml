@@ -1,0 +1,10 @@
+plugin:
+  name: mod-distortion
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/mod-distortion.git
+  build:
+    - make
+  install:
+    - make install INSTALL_PATH=${LV2_DIR}

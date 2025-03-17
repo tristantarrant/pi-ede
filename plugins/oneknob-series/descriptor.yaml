@@ -1,0 +1,10 @@
+plugin:
+  name: oneknob-series
+  version: main
+  source:
+    type: git
+    url: https://github.com/DISTRHO/OneKnob-Series.git
+  build:
+    - make
+  install: bin
+

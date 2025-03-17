@@ -1,0 +1,10 @@
+plugin:
+  name: fatfrog
+  version: main
+  source:
+    type: git
+    url: git@github.com:brummer10/FatFrog.git
+  build:
+    - make mod
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}

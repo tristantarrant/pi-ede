@@ -1,0 +1,11 @@
+plugin:
+  name: ams
+  version: master
+  source:
+    type: git
+    url: https://github.com/blablack/ams-lv2.git
+  build:
+    - ./waf configure --prefix=/usr
+    - ./waf
+  install:
+    - ./waf install --destdir=${TARGET_DIR}

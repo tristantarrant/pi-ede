@@ -1,0 +1,117 @@
+diff --git a/rdf/inv_compressor.ttl b/rdf/inv_compressor.ttl
+index 37d82bc..58c23a5 100644
+--- a/rdf/inv_compressor.ttl
++++ b/rdf/inv_compressor.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:   <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
++@prefix units:  <http://lv2plug.in/ns/extension/units#> .
+ @prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+ @prefix dct:    <http://purl.org/dc/terms/> .
+ @prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
+diff --git a/rdf/inv_delay.ttl b/rdf/inv_delay.ttl
+index 642e2b6..9182dad 100644
+--- a/rdf/inv_delay.ttl
++++ b/rdf/inv_delay.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:   <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
++@prefix units:  <http://lv2plug.in/ns/extension/units#> .
+ @prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+ @prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
+ @prefix mod:    <http://moddevices.com/ns/mod#> .
+diff --git a/rdf/inv_erreverb.ttl b/rdf/inv_erreverb.ttl
+index b65ab0c..b784b9f 100644
+--- a/rdf/inv_erreverb.ttl
++++ b/rdf/inv_erreverb.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:   <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
++@prefix units:  <http://lv2plug.in/ns/extension/units#> .
+ @prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+ @prefix dct:    <http://purl.org/dc/terms/> .
+ @prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
+diff --git a/rdf/inv_filter.ttl b/rdf/inv_filter.ttl
+index 4d069b9..8712cbe 100644
+--- a/rdf/inv_filter.ttl
++++ b/rdf/inv_filter.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:   <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
++@prefix units:  <http://lv2plug.in/ns/extension/units#> .
+ @prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+ @prefix dct:    <http://purl.org/dc/terms/> .
+ @prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
+diff --git a/rdf/inv_input.ttl b/rdf/inv_input.ttl
+index f144631..91a0355 100644
+--- a/rdf/inv_input.ttl
++++ b/rdf/inv_input.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:  <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units: <http://lv2plug.in/ns/extensions/units#> .
++@prefix units: <http://lv2plug.in/ns/extension/units#> .
+ @prefix dct:   <http://purl.org/dc/terms/> .
+ @prefix pg:    <http://lv2plug.in/ns/ext/port-groups#> .
+ @prefix mod:   <http://moddevices.com/ns/mod#> .
+diff --git a/rdf/inv_meter.ttl b/rdf/inv_meter.ttl
+index 6bb1663..5a559d0 100644
+--- a/rdf/inv_meter.ttl
++++ b/rdf/inv_meter.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:  <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units: <http://lv2plug.in/ns/extensions/units#> .
++@prefix units: <http://lv2plug.in/ns/extension/units#> .
+ @prefix pg:    <http://lv2plug.in/ns/ext/port-groups#> .
+ @prefix mod:   <http://moddevices.com/ns/mod#> .
+ 
+diff --git a/rdf/inv_phaser.ttl b/rdf/inv_phaser.ttl
+index cf45c81..9a05900 100644
+--- a/rdf/inv_phaser.ttl
++++ b/rdf/inv_phaser.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:   <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
++@prefix units:  <http://lv2plug.in/ns/extension/units#> .
+ @prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+ @prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
+ @prefix mod:    <http://moddevices.com/ns/mod#> .
+diff --git a/rdf/inv_testtone.ttl b/rdf/inv_testtone.ttl
+index 28fbace..eb5d40e 100644
+--- a/rdf/inv_testtone.ttl
++++ b/rdf/inv_testtone.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:   <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units:  <http://lv2plug.in/ns/extensions/units#> .
++@prefix units:  <http://lv2plug.in/ns/extension/units#> .
+ @prefix pprops: <http://lv2plug.in/ns/ext/port-props#> .
+ @prefix pg:     <http://lv2plug.in/ns/ext/port-groups#> .
+ @prefix mod:    <http://moddevices.com/ns/mod#> .
+diff --git a/rdf/inv_tube.ttl b/rdf/inv_tube.ttl
+index defedef..79fb779 100644
+--- a/rdf/inv_tube.ttl
++++ b/rdf/inv_tube.ttl
+@@ -2,7 +2,7 @@
+ @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+ @prefix doap:  <http://usefulinc.com/ns/doap#> .
+ @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+-@prefix units: <http://lv2plug.in/ns/extensions/units#> .
++@prefix units: <http://lv2plug.in/ns/extension/units#> .
+ @prefix dct:   <http://purl.org/dc/terms/> .
+ @prefix pg:    <http://lv2plug.in/ns/ext/port-groups#> .
+ @prefix mod:    <http://moddevices.com/ns/mod#> .

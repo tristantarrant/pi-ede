@@ -1,0 +1,14 @@
+plugin:
+  name: airwindows
+  version: master
+  source:
+    type: git
+    url: https://github.com/hannesbraun/airwindows-lv2.git
+  build:
+    - meson setup build -Dlv2dir=$(pwd)/build/lv2
+    - meson compile -C build
+  install:
+    - meson install -C build
+    - mkdir build/bundles
+    - find build/lv2 -name "*.so" -exec ${PLUGIN_DIR}/make-bundle.sh {} build/bundles \;
+    - cp -r build/bundles/*.lv2 ${LV2_DIR}

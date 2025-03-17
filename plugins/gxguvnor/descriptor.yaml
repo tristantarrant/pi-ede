@@ -1,0 +1,10 @@
+plugin:
+  name: gxguvnor
+  version: master
+  source:
+    type: git
+    url: https://github.com/brummer10/GxGuvnor.lv2.git
+  build:
+    - make mod
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}

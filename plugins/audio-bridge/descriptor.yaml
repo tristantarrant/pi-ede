@@ -1,0 +1,11 @@
+plugin:
+  name: audio-bridge
+  version: main
+  source:
+    type: git
+    url: https://github.com/falkTX/audio-bridge.git
+  build:
+    - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release
+    - cmake --build bin
+  install:
+    - cmake --install bin --prefix=${PREFIX_DIR}

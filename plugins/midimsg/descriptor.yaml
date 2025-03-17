@@ -1,0 +1,11 @@
+plugin:
+  name: midimisg
+  version: master
+  source:
+    type: git
+    url: https://github.com/blablack/midimsg-lv2.git
+  build:
+    - ./waf configure --prefix=/usr
+    - ./waf
+  install:
+    - ./waf install --destdir=${TARGET_DIR}

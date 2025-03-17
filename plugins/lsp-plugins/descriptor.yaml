@@ -1,0 +1,11 @@
+plugin:
+  name: lsp-plugins
+  version: 1.2.21
+  source:
+    type: git
+    url: https://github.com/lsp-plugins/lsp-plugins.git
+  build:
+    - make config FEATURES='lv2'
+    - make
+  install:
+    - echo INSTALL

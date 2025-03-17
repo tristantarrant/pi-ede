@@ -1,0 +1,11 @@
+plugin:
+  name: mrfreeze
+  version: master
+  source:
+    type: git
+    url: https://github.com/romi1502/MrFreeze.git
+  build:
+    - cp ${PLUGIN_DIR}/harmonizer.wisdom.${CPU_ARCH} mrfreeze.wisdom
+    - make NOOPT=true
+  install:
+    - make install INSTALL_PATH=${LV2_DIR}

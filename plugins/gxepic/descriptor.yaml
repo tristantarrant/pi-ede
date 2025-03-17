@@ -1,0 +1,10 @@
+plugin:
+  name: gxepic
+  version: master
+  source:
+    type: git
+    url: https://github.com/brummer10/GxEpic.lv2.git
+  build:
+    - make mod
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}

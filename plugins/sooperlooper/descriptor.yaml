@@ -1,0 +1,10 @@
+plugin:
+  name: sooperlooper
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/sooperlooper-lv2-plugin.git
+  build:
+    - make
+  install:
+    - echo INSTALL

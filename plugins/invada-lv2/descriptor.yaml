@@ -1,0 +1,10 @@
+plugin:
+  name: invada-lv2
+  version: main
+  source:
+    type: git
+    url: https://github.com/falkTX/invada-studio-plugins-lv2.git
+  build:
+    - make
+  install:
+    - make install-sys INSTALL_SYS_PLUGINS_DIR=${LV2_DIR}

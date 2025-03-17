@@ -1,0 +1,12 @@
+plugin:
+  name: amsynth
+  version: main
+  source:
+    type: git
+    url: https://github.com/amsynth/amsynth.git
+  build:
+    - ./autogen.sh
+    - ./configure --without-gui --without-oss --without-alsa --without-lash --without-nsm --with-lv2 --without-vst --without-pandoc --prefix=${PREFIX_DIR}
+    - make
+  install:
+    - echo install

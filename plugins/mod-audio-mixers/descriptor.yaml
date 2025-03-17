@@ -1,0 +1,10 @@
+plugin:
+  name: mod-audio-mixers
+  version: master
+  source:
+    type: git
+    url: https://github.com/mod-audio/mod-audio-mixer-lv2.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}

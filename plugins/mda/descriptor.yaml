@@ -1,0 +1,11 @@
+plugin:
+  name: mda
+  version: main
+  source:
+    type: git
+    url: https://gitlab.com/drobilla/mda-lv2.git
+  build:
+    - meson setup build -Dlv2dir=${LV2_DIR}
+    - meson compile -C build
+  install:
+    - echo TODO

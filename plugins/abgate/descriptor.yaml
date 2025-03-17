@@ -1,0 +1,11 @@
+plugin:
+  name: abgate
+  version: v1.2.0
+  source:
+    type: git
+    url: https://github.com/antanasbruzas/abGate.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}
+

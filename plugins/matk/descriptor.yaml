@@ -1,0 +1,10 @@
+plugin:
+  name: matk
+  version: main
+  source:
+    type: git
+    url: https://github.com/brummer10/ModularAmpToolKit.lv2.git
+  build:
+    - make mod
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}

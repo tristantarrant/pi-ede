@@ -1,0 +1,17 @@
+jackd2
+libasound2
+libbrotli1
+libexpat1
+libfftw3-bin
+libflac12
+liblilv-0-0
+libogg0
+libopus0
+libsndfile1
+libts-bin
+libvorbis0a
+libzita-convolver4
+libzita-resampler1
+python3-virtualenv
+rpd-plym-splash
+socat

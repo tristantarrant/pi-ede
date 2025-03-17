@@ -1,0 +1,10 @@
+plugin:
+  name: rezonateur
+  version: master
+  source:
+    type: git
+    url: https://github.com/jpcima/rezonateur.git
+  build:
+    - make
+  install:
+    - make install INSTALL_DIR=${TARGET_DIR}

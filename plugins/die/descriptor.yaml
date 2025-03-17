@@ -1,0 +1,10 @@
+plugin:
+  name: die
+  version: main
+  source:
+    type: git
+    url: https://github.com/DISTRHO/DIE-Plugins.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}

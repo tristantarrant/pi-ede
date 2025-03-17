@@ -1,0 +1,12 @@
+plugin:
+  name: max-gen
+  version: main
+  source:
+    type: git
+    url: https://github.com/mod-audio/max-gen-plugins.git
+  build:
+    - make
+  install:
+    - cd bin
+    - cp -rv *.lv2 ${LV2_DIR}
+    - cd ..

@@ -1,0 +1,10 @@
+plugin:
+  name: mod-volume
+  version: master
+  source:
+    type: git
+    url: https://github.com/mod-audio/mod-volume-lv2.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}

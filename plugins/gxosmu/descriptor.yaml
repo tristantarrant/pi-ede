@@ -1,0 +1,10 @@
+plugin:
+  name: gxosmu
+  version: master
+  source:
+    type: git
+    url: https://github.com/brummer10/GxOsMutantes.lv2.git
+  build:
+    - make
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}
