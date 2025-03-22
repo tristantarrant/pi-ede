@@ -8,4 +8,4 @@ plugin:
     - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release -DGENERIC_AARCH64=ON -DRTNEURAL_XSIMD=ON -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
     - cmake --build bin
   install:
-    - make -C bin install DESTDIR=${TARGET_DIR}
+    - make -C bin install DESTDIR=${LV2_DIR}
