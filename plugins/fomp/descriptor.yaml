@@ -5,8 +5,7 @@ plugin:
     type: git
     url: https://gitlab.com/drobilla/fomp.git
   build:
-    - cd trunk
-    - ./waf configure --optimization --mod-lv2 --no-lv2-gui --prefix=/usr
-    - ./waf
+    - meson setup build -Dlv2dir=${LV2_DIR}
+    - meson compile -C build
   install:
-    - ./waf install --destdir=${TARGET_DIR}
+    - meson install -C build
