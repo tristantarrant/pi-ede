@@ -1,0 +1,10 @@
+plugin:
+  name: mod-midi-utilities
+  version: master
+  source:
+    type: git
+    url: https://github.com/mod-audio/mod-midi-utilities.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}
