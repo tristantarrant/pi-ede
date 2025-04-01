@@ -1,0 +1,10 @@
+plugin:
+  name: shiro
+  version: master
+  source:
+    type: git
+    url: https://github.com/tristantarrant/SHIRO-Plugins.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}

@@ -1,0 +1,10 @@
+plugin:
+  name: stone-phaser
+  version: master
+  source:
+    type: git
+    url: https://github.com/jpcima/stone-phaser.git
+  build:
+    - make BUILD_UI=false
+  install:
+    - make install PREFIX=${PREFIX_DIR}
