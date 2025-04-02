@@ -1,0 +1,10 @@
+plugin:
+  name: setbfree
+  version: master
+  source:
+    type: git
+    url: https://github.com/pantherb/setBfree.git
+  build:
+    - make
+  install:
+    - make install DESTDIR=${TARGET_DIR}
