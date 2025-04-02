@@ -5,6 +5,6 @@ plugin:
     type: git
     url: https://github.com/tristantarrant/SHIRO-Plugins.git
   build:
-    - make
+    - make NOOPT=true
   install:
     - make install PREFIX=${PREFIX_DIR}
