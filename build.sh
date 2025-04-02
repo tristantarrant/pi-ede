@@ -29,7 +29,7 @@ parse() {
   SOURCE_TYPE=$(yq eval '.plugin.source.type' "$1")
   BUILD_COMMANDS=$(yq ".plugin.build" "$1"| sed "s/^- //")
   INSTALL_COMMANDS=$(yq ".plugin.install" "$1"| sed "s/^- //")
-
+  DATA_TYPE=$(yq eval '.plugin.data.type' "$1")
   PLUGIN_DIR=$(pwd)/$(dirname "$1")
   SOURCE_DIR="$WORK_DIR/build/$NAME-$VERSION"
 }
@@ -89,9 +89,15 @@ install() {
   done <<< "$INSTALL_COMMANDS"
   popd > /dev/null || exit
 
-  for PLUGIN in $PLUGINS; do
-    find "$DIR/data" -name "$PLUGIN" -type d -exec cp -rv {} "$LV2_DIR" \;
-  done
+  case $DATA_TYPE in
+    local)
+      ;;
+    *)
+      for PLUGIN in $PLUGINS; do
+        find "$DIR/data" -name "$PLUGIN" -type d -exec cp -rv {} "$LV2_DIR" \;
+      done
+      ;;
+  esac
 }
 
 clean() {

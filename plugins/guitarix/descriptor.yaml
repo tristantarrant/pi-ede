@@ -4,6 +4,8 @@ plugin:
   source:
     type: git
     url: https://github.com/brummer10/guitarix.git
+  data:
+    type: local
   build:
     - cd trunk
     - ./waf configure --optimization --mod-lv2 --no-lv2-gui --no-standalone --prefix=/usr
