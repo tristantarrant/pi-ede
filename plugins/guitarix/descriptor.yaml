@@ -6,7 +6,7 @@ plugin:
     url: https://github.com/brummer10/guitarix.git
   build:
     - cd trunk
-    - ./waf configure --optimization --mod-lv2 --no-lv2-gui --prefix=/usr
+    - ./waf configure --optimization --mod-lv2 --no-lv2-gui --no-standalone --prefix=/usr
     - ./waf
   install:
     - cd trunk
