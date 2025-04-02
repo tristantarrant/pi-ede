@@ -6,6 +6,6 @@ plugin:
     url: https://github.com/moddevices/mod-pitchshifter.git
   build:
     - cp ${PLUGIN_DIR}/harmonizer.wisdom.${CPU_ARCH} Shared_files/harmonizer.wisdom
-    - make
+    - make NOOPT=true
   install:
     - make install INSTALL_PATH=${LV2_DIR}
