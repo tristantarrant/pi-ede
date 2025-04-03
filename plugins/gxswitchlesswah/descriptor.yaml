@@ -4,6 +4,8 @@ plugin:
   source:
     type: git
     url: https://github.com/brummer10/GxSwitchlessWah.lv2.git
+  data:
+    type: local
   build:
     - make mod
   install:

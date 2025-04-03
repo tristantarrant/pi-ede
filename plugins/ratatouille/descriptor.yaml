@@ -7,4 +7,4 @@ plugin:
   build:
     - make modapp
   install:
-    - make install INSTALL_DIR=${TARGET_DIR}
+    - make install INSTALL_DIR=${LV2_DIR}

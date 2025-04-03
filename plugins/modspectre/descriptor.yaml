@@ -5,6 +5,6 @@ plugin:
     type: git
     url: https://github.com/x42/modspectre.lv2.git
   build:
-    - make
+    - make MOD=1 OPTIMIZATIONS="-ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only"
   install:
     - make install PREFIX=${PREFIX_DIR}

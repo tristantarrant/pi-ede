@@ -5,6 +5,7 @@ flex
 gawk
 git
 help2man
+libarmadillo-dev
 libcairo2-dev
 libjack-jackd2-dev
 libjpeg-dev

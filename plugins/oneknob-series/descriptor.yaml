@@ -5,6 +5,7 @@ plugin:
     type: git
     url: https://github.com/DISTRHO/OneKnob-Series.git
   build:
-    - make
-  install: bin
+    - make MOD_BUILD=true NOOPT=true WITH_LTO=true
+  install:
+    - make install
 
