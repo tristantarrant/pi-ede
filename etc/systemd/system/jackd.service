@@ -1,7 +1,6 @@
 [Unit]
 Description=JACK
 After=sound.target
-StopWhenUnneded=true
 
 [Service]
 LimitRTPRIO=95
