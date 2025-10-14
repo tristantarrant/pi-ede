@@ -3,7 +3,7 @@ plugin:
   version: main
   source:
     type: git
-    url: git@github.com:brummer10/FatFrog.git
+    url: https://github.com/brummer10/FatFrog.git
   build:
     - make mod
   install:

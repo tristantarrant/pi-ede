@@ -92,10 +92,13 @@ install() {
   case $DATA_TYPE in
     local)
       ;;
-    *)
+    "")
       for PLUGIN in $PLUGINS; do
         find "$DIR/data" -name "$PLUGIN" -type d -exec cp -rv {} "$LV2_DIR" \;
       done
+      ;;
+    *)
+      find "$DIR/data" -name "$DATA_TYPE" -type d -exec cp -rv {} "$LV2_DIR" \;
       ;;
   esac
 }

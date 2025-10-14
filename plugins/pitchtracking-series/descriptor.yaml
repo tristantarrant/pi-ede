@@ -1,0 +1,10 @@
+plugin:
+  name: pitchtracking-series
+  version: main
+  source:
+    type: git
+    url: https://github.com/DISTRHO/PitchTrackingSeries.git
+  build:
+    - make
+  install:
+    - cp -r bin/*.lv2 ${LV2_DIR}
