@@ -7,5 +7,7 @@ plugin:
   build:
     - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
     - cmake --build bin
+  data:
+    type: rkr.lv2
   install:
     - make -C bin install DESTDIR=${TARGET_DIR}
