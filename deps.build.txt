@@ -8,6 +8,7 @@ help2man
 libarmadillo-dev
 libcairo2-dev
 libeigen3-dev
+libfluidsynth-dev
 libfftw3-dev
 libjack-jackd2-dev
 libjpeg-dev

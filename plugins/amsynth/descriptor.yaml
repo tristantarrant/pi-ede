@@ -6,7 +6,7 @@ plugin:
     url: https://github.com/amsynth/amsynth.git
   build:
     - ./autogen.sh
-    - ./configure --without-gui --without-oss --without-alsa --without-lash --without-nsm --with-lv2 --without-vst --without-pandoc --prefix=${PREFIX_DIR}
+    - ./configure --with-gui=no --with-oss=no --with-jack=no --with-alsa=no --with-lash=no --with-nsm=no --with-lv2=yes --with-vst=no --with-pandoc=no --prefix=${PREFIX_DIR}
     - make
   install:
-    - echo install
+    - make install

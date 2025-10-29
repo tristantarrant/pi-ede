@@ -1,0 +1,12 @@
+plugin:
+  name: schrammel-ojd
+  version: master
+  source:
+    type: git
+    url: https://github.com/JanosGit/Schrammel_OJD.git
+  build:
+    - cmake -S . -B bin -DBUILD_GUI=OFF -DBUILD_SSE=OFF -DCMAKE_BUILD_TYPE=Release
+    - cmake --build bin
+  install:
+    - cmake --install bin --prefix=${PREFIX_DIR}
+

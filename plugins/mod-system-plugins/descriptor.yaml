@@ -1,0 +1,10 @@
+plugin:
+  name: mod-system-plugins
+  version: master
+  source:
+    type: git
+    url: https://github.com/mod-audio/mod-system-plugins.git
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR} 

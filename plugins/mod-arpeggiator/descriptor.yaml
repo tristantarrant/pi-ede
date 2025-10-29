@@ -1,0 +1,10 @@
+plugin:
+  name: mod-arpeggiator
+  version: master
+  source:
+    type: git
+    url: https://github.com/mod-audio/mod-arpeggiator-lv2.git
+  build:
+    - make NOOPT=true
+  install:
+    - make install INSTALL_PATH=${LV2_DIR}

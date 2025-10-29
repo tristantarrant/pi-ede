@@ -1,6 +1,6 @@
 plugin:
   name: ratatouille
-  version: v0.9.9
+  version: v0.9.10
   source:
     type: git
     url: https://github.com/brummer10/Ratatouille.lv2.git

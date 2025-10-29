@@ -1,0 +1,11 @@
+plugin:
+  name: chow-centaur
+  version: master
+  source:
+    type: git
+    url: https://github.com/jatinchowdhury18/KlonCentaur.git
+  build:
+    - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+    - cmake --build bin
+  install:
+    - find bin -name '*.lv2' -exec cp -r {} ${LV2_DIR} \;
