@@ -5,6 +5,6 @@ plugin:
     type: git
     url: https://github.com/pantherb/setBfree.git
   build:
-    - make OPTIMIZATIONS="-ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only"
+    - make OPTIMIZATIONS="-ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only" MOD=1
   install:
-    - make install DESTDIR=${TARGET_DIR}
+    - make install PREFIX=${PREFIX_DIR} MOD=1

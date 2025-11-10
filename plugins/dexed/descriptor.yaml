@@ -1,0 +1,11 @@
+plugin:
+  name: dexed
+  version: master
+  source:
+    type: git
+    url: https://github.com/dcoredump/dexed.lv2.git
+  build:
+    - cd src
+    - make
+  install:
+    - cp -r src/dexed.lv2 ${LV2_DIR}
