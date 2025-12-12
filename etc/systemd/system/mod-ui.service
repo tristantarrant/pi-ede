@@ -1,10 +1,10 @@
 [Unit]
 Description=MOD UI
-Wants=jackd.service
+Wants=jackd.service pi-ede-ui.service
 
 [Service]
 Type=simple
-Environment="MOD_LOG=1"
+Environment="MOD_LOG=0"
 ExecStart=/home/tst/src/mod-ui/mod-ui.sh
 StandardOutput=journal+console
 StandardError=journal+console

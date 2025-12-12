@@ -1,0 +1,13 @@
+[Unit]
+Description=PiEDE UI
+Wants=jackd.service
+
+[Service]
+Type=simple
+ExecStart=/home/tst/pi_ede_ui/flutter-pi --release /home/tst/pi_ede_ui
+StandardOutput=journal+console
+StandardError=journal+console
+Restart=never
+User=tst
+SyslogIdentifier=pi-ede-ui
+

@@ -1,0 +1,10 @@
+plugin:
+  name: tal-reverb
+  version: main
+  source:
+    type: git
+    url: https://github.com/DISTRHO/DISTRHO-Ports
+  build:
+    - make
+  install:
+    - make install PREFIX=${PREFIX_DIR}
