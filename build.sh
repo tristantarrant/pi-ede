@@ -66,6 +66,9 @@ download() {
 prepare() {
   echo "=== Patch: $NAME ==="
   find "$PLUGIN_DIR" -name "*.patch" -type f -print -exec patch -d "$SOURCE_DIR" -N -p1 -i {} \;
+  if [ -d "$PLUGIN_DIR/overlay" ]; then
+     cp -rv "$PLUGIN_DIR"/overlay/* "$SOURCE_DIR"
+  fi 
 }
 
 build() {
