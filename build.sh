@@ -114,6 +114,7 @@ WORK_DIR=$RESOLVED_DIR/work
 export TARGET_DIR="$WORK_DIR/target"
 export PREFIX_DIR="$TARGET_DIR/usr"
 export LV2_DIR="$PREFIX_DIR/lib/lv2"
+export DATA_DIR="$RESOLVED_DIR/data"
 CLEAN=false
 
 while true
