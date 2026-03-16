@@ -1,0 +1,14 @@
+plugin:
+  name:     mod-cabsim-ir-loader
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/mod-cabsim-IR-loader.git
+  build:
+    - pushd source
+    - make
+    - popd
+  install:
+    - pushd source
+    - make install DESTDIR=${TARGET_DIR} PREFIX=/usr
+    - popd
