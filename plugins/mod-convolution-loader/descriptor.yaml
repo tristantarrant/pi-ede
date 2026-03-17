@@ -1,0 +1,12 @@
+plugin:
+  name: mod-convolution-loader
+  version: main
+  source:
+    type: git
+    url: https://github.com/moddevices/mod-convolution-loader.git
+  build:
+    - make
+  install:
+    - pushd bin
+    - cp -rv *.lv2 ${LV2_DIR}
+    - popd
