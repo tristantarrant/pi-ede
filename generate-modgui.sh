@@ -79,7 +79,8 @@ for idx, sym, name in results:
 
 # Get plugin URI from manifest.ttl
 get_plugin_uri() {
-    grep 'a lv2:Plugin' "$1/manifest.ttl" | grep -oP '<[^>]+>' | head -1 | tr -d '<>'
+    # URI is on the line before or same line as 'a lv2:Plugin', and starts with http
+    grep -B1 'a lv2:Plugin' "$1/manifest.ttl" | grep -oP '<https?://[^>]+>' | head -1 | tr -d '<>'
 }
 
 # Get plugin display name from TTL
