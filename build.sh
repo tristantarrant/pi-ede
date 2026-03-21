@@ -7,7 +7,7 @@ setup() {
       CPU_ARCH=x86_64
       ;;
     aarch64)
-      CPU_ARCH=$(gcc -march=native -Q --help=target -v 2> /dev/null|grep -- "^  -march"|tr -d ' \t'|cut -d= -f2|cut -d+ -f1)
+      CPU_ARCH=$(gcc -mcpu=native -### -x c /dev/null 2>&1 | grep -oP 'march=\K[^ "]+' | cut -d+ -f1)
       ;;
     arm)
       CPU_ARCH=$(gcc -march=native -Q --help=target -v 2> /dev/null|grep -- "^  -march"|tr -d ' \t'|cut -d= -f2|cut -d+ -f1)

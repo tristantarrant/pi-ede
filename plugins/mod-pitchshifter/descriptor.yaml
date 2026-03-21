@@ -10,4 +10,6 @@ plugin:
   install:
     - make install INSTALL_PATH=${LV2_DIR}
   bundles: []
-  dependencies: []
+  dependencies:
+    - libarmadillo-dev
+    - libfftw3-dev

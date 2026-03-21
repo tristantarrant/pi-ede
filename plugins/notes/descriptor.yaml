@@ -5,9 +5,10 @@ plugin:
     type: git
     url: https://git.ventosus.ch/notes.lv2
   build:
-    - meson setup build -Dlv2dir=${LV2_DIR}
+    - meson setup build -Dlv2libdir=${LV2_DIR} --prefix=${PREFIX_DIR}
     - meson compile -C build
   install:
     - meson install -C build
   bundles: []
-  dependencies: []
+  dependencies:
+    - libvterm-dev

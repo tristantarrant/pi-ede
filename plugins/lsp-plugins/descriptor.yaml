@@ -9,6 +9,6 @@ plugin:
     - make fetch
     - make
   install:
-    - echo INSTALL
+    - make install
   bundles: []
   dependencies: []

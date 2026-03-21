@@ -9,6 +9,7 @@ plugin:
     - meson compile -C build
   install:
     - meson install -C build
-  bundles: []
+  bundles:
+    - fomp.lv2
   dependencies:
     - meson

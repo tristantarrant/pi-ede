@@ -5,8 +5,9 @@ plugin:
     type: git
     url: https://github.com/mikeoliphant/neural-amp-modeler-lv2.git
   build:
-    - make modapp
+    - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${PREFIX_DIR}
+    - cmake --build bin
   install:
-    - make install INSTALL_DIR=${LV2_DIR}
+    - cmake --install bin
   bundles: []
   dependencies: []

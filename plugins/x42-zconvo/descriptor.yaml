@@ -9,4 +9,6 @@ plugin:
   install:
     - make install PREFIX=${PREFIX_DIR} MOD=1
   bundles: []
-  dependencies: []
+  dependencies:
+    - libsndfile1-dev
+    - libsamplerate0-dev

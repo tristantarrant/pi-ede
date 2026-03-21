@@ -5,7 +5,8 @@ plugin:
     type: git
     url: https://github.com/zamaudio/zam-plugins.git
   build:
-    - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true  install:
-    - make install PREFIX=${PREFIX_DIR}
+    - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true
+  install:
+    - make install HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true PREFIX=${PREFIX_DIR}
   bundles: []
   dependencies: []

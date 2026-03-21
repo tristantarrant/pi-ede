@@ -10,4 +10,5 @@ plugin:
   install:
     - make install INSTALL_PATH=${LV2_DIR}
   bundles: []
-  dependencies: []
+  dependencies:
+    - libeigen3-dev

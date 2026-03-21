@@ -11,6 +11,42 @@ plugin:
     - pushd build/mda.lv2
     - for i in *.so; do NAME=$(basename $i .so); PLUGIN=mod-mda-${NAME}.lv2; mkdir -p ${LV2_DIR}/${PLUGIN}; cp ${NAME}.* ${LV2_DIR}/${PLUGIN}; find "$DATA_DIR" -name "$PLUGIN" -type d -exec cp -rv {} ${LV2_DIR} \; ; done
     - popd
-  bundles: []
+  bundles:
+    - mod-mda-Ambience.lv2
+    - mod-mda-Bandisto.lv2
+    - mod-mda-BeatBox.lv2
+    - mod-mda-Combo.lv2
+    - mod-mda-DX10.lv2
+    - mod-mda-DeEss.lv2
+    - mod-mda-Degrade.lv2
+    - mod-mda-Delay.lv2
+    - mod-mda-Detune.lv2
+    - mod-mda-Dither.lv2
+    - mod-mda-DubDelay.lv2
+    - mod-mda-Dynamics.lv2
+    - mod-mda-EPiano.lv2
+    - mod-mda-Image.lv2
+    - mod-mda-JX10.lv2
+    - mod-mda-Leslie.lv2
+    - mod-mda-Limiter.lv2
+    - mod-mda-Loudness.lv2
+    - mod-mda-MultiBand.lv2
+    - mod-mda-Overdrive.lv2
+    - mod-mda-Piano.lv2
+    - mod-mda-RePsycho.lv2
+    - mod-mda-RezFilter.lv2
+    - mod-mda-RingMod.lv2
+    - mod-mda-RoundPan.lv2
+    - mod-mda-Shepard.lv2
+    - mod-mda-Splitter.lv2
+    - mod-mda-Stereo.lv2
+    - mod-mda-SubSynth.lv2
+    - mod-mda-TalkBox.lv2
+    - mod-mda-TestTone.lv2
+    - mod-mda-ThruZero.lv2
+    - mod-mda-Tracker.lv2
+    - mod-mda-Transient.lv2
+    - mod-mda-VocInput.lv2
+    - mod-mda-Vocoder.lv2
   dependencies:
     - meson

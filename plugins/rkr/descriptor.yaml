@@ -5,7 +5,7 @@ plugin:
     type: git
     url: https://github.com/ssj71/rkrlv2.git
   build:
-    - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+    - cmake -S . -B bin -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     - cmake --build bin
   data:
     type: rkr.lv2

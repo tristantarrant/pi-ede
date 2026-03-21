@@ -8,5 +8,6 @@ plugin:
     - make MOD=1
   install:
     - make install PREFIX=${PREFIX_DIR} MOD=1
-  bundles: []
+  bundles:
+    - fat1.lv2
   dependencies: []

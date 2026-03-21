@@ -9,4 +9,5 @@ plugin:
   install:
     - make install PREFIX=${PREFIX_DIR}
   bundles: []
-  dependencies: []
+  dependencies:
+    - libfluidsynth-dev
