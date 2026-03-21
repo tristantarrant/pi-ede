@@ -5,9 +5,16 @@ plugin:
     type: git
     url: https://github.com/mod-audio/mod-ams-lv2.git
   build:
-    - ./waf configure --prefix=/usr
-    - ./waf
+    - git clone --depth 1 --branch 1.2.0 https://github.com/lvtk/lvtk.git /tmp/lvtk-1 2>/dev/null || true
+    - mkdir -p ${PREFIX_DIR}/include/lvtk-1/lvtk
+    - cp -r /tmp/lvtk-1/lvtk/* ${PREFIX_DIR}/include/lvtk-1/lvtk/
+    - mkdir -p ${PREFIX_DIR}/lib
+    - g++ ${CXXFLAGS} -fPIC -shared -o ${PREFIX_DIR}/lib/liblvtk_plugin-1.so -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2) /tmp/lvtk-1/src/plugin.cpp
+    - LVTK_CFLAGS="-I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2)" && LVTK_LIBS="-L${PREFIX_DIR}/lib -llvtk_plugin-1" && for p in env lfo2_freq vcalin percussiveenv; do g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $LVTK_CFLAGS -DPLUGIN_CLASS=$p -DURI_PREFIX=\"http://github.com/blablack/ams-lv2/\" -DPLUGIN_URI_SUFFIX="\"$p\"" -DPLUGIN_HEADER="\"src/$p.hpp\"" -o mod-ams.lv2/$p.so src/$p.cpp $LVTK_LIBS && echo "Built $p"; done
+    - LVTK_CFLAGS="-I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2)" && LVTK_LIBS="-L${PREFIX_DIR}/lib -llvtk_plugin-1" && for p in vcaexp vcf vco3; do g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $LVTK_CFLAGS -DPLUGIN_CLASS=$p -DURI_PREFIX=\"http://github.com/blablack/ams-lv2/\" -DPLUGIN_URI_SUFFIX="\"$p\"" -DPLUGIN_HEADER="\"src/$p.hpp\"" -o mod-ams.lv2/$p.so src/$p.cpp $LVTK_LIBS && echo "Built $p"; done
+    - LVTK_CFLAGS="-I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2)" && LVTK_LIBS="-L${PREFIX_DIR}/lib -llvtk_plugin-1" && g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $LVTK_CFLAGS -DPLUGIN_CLASS=seq_8 -DURI_PREFIX=\"http://github.com/blablack/ams-lv2/\" -DPLUGIN_URI_SUFFIX="\"seq_8\"" -DPLUGIN_HEADER="\"src/seq.hpp\"" -DSTEP_COUNT=8 -o mod-ams.lv2/seq_8.so src/seq.cpp src/synthdata.cpp $LVTK_LIBS && echo "Built seq_8"
   install:
-    - ./waf install --destdir=${TARGET_DIR}
-  bundles: []
+    - cp -r mod-ams.lv2 ${LV2_DIR}/
+  bundles:
+    - mod-ams.lv2
   dependencies: []
