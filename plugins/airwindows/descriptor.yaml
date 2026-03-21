@@ -9,7 +9,7 @@ plugin:
     - meson compile -C build
   install:
     - meson install -C build
-    - mkdir build/bundles
+    - mkdir -p build/bundles
     - find build/lv2 -name "*.so" -exec ${PLUGIN_DIR}/make-bundle.sh {} build/bundles \;
     - cp -r build/bundles/*.lv2 ${LV2_DIR}
   bundles: []

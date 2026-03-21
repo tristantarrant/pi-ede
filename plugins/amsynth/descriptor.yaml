@@ -11,4 +11,5 @@ plugin:
   install:
     - make install
   bundles: []
-  dependencies: []
+  dependencies:
+    - intltool
