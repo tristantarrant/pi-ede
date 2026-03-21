@@ -8,5 +8,7 @@ plugin:
     - make
   install:
     - make install PREFIX=${PREFIX_DIR} 
-  bundles: []
+  bundles:
+    - system-compressor.lv2
+    - system-noisegate.lv2
   dependencies: []

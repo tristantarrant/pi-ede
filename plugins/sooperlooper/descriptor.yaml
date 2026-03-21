@@ -7,6 +7,11 @@ plugin:
   build:
     - make
   install:
-    - echo INSTALL
-  bundles: []
+    - mkdir -p ${LV2_DIR}/sooperlooper.lv2
+    - cp sooperlooper/sooperlooper.so sooperlooper/src/*.ttl ${LV2_DIR}/sooperlooper.lv2/
+    - mkdir -p ${LV2_DIR}/sooperlooper-2x2.lv2
+    - cp sooperlooper-2x2/sooperlooper-2x2.so sooperlooper-2x2/src/*.ttl ${LV2_DIR}/sooperlooper-2x2.lv2/
+  bundles:
+    - sooperlooper.lv2
+    - sooperlooper-2x2.lv2
   dependencies: []

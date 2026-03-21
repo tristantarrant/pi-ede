@@ -10,7 +10,8 @@ plugin:
     - make
   install:
     - make install
-  bundles: []
+  bundles:
+    - amsynth.lv2
   dependencies:
     - intltool
     - autoconf-archive

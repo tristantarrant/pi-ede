@@ -9,7 +9,15 @@ plugin:
     - make
   install:
     - make install INSTALL_PATH=${LV2_DIR}
-  bundles: []
+  bundles:
+    - mod-harmonizer.lv2
+    - mod-harmonizer2.lv2
+    - mod-harmonizercs.lv2
+    - mod-supercapo.lv2
+    - mod-superwhammy.lv2
+    - mod-2voices.lv2
+    - mod-capo.lv2
+    - mod-drop.lv2
   dependencies:
     - libarmadillo-dev
     - libfftw3-dev

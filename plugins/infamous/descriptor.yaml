@@ -9,6 +9,18 @@ plugin:
     - cmake --build bin
   install:
     - cmake --install bin
-  bundles: []
+  bundles:
+    - bentdelay.lv2
+    - casynth.lv2
+    - cheapdist.lv2
+    - envfollower.lv2
+    - ewham.lv2
+    - hip2b.lv2
+    - lushlife.lv2
+    - mindi.lv2
+    - octolo.lv2
+    - powercut.lv2
+    - powerup.lv2
+    - stuck.lv2
   dependencies:
     - libzita-resampler-dev

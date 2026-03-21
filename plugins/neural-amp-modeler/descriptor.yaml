@@ -9,5 +9,6 @@ plugin:
     - cmake --build bin
   install:
     - cmake --install bin
-  bundles: []
+  bundles:
+    - neural_amp_modeler.lv2
   dependencies: []

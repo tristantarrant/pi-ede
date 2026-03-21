@@ -12,5 +12,10 @@ plugin:
     - make clean install MOD=1 N_STEPS=32 N_NOTES=8 LV2DIR=${LV2_DIR}
   install:
     - true
-  bundles: []
+  bundles:
+    - stepseq_s8n4.lv2
+    - stepseq_s8n8.lv2
+    - stepseq_s8n16.lv2
+    - stepseq_s16n8.lv2
+    - stepseq_s32n8.lv2
   dependencies: []

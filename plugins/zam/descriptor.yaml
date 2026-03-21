@@ -8,5 +8,23 @@ plugin:
     - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true
   install:
     - make install HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - ZamAutoSat.lv2
+    - ZaMaximX2.lv2
+    - ZamComp.lv2
+    - ZamCompX2.lv2
+    - ZamDelay.lv2
+    - ZamDynamicEQ.lv2
+    - ZamEQ2.lv2
+    - ZamGate.lv2
+    - ZamGateX2.lv2
+    - ZamGEQ31.lv2
+    - ZamGrains.lv2
+    - ZamHeadX2.lv2
+    - ZamNoise.lv2
+    - ZamPhono.lv2
+    - ZamTube.lv2
+    - ZaMultiComp.lv2
+    - ZaMultiCompX2.lv2
+    - ZamVerb.lv2
   dependencies: []

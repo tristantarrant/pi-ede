@@ -8,5 +8,7 @@ plugin:
     - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true
   install:
     - cp -r bin/*.lv2 ${LV2_DIR}
-  bundles: []
+  bundles:
+    - rezonateur.lv2
+    - rezonateur-stereo.lv2
   dependencies: []

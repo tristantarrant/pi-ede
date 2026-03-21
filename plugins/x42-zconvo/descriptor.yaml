@@ -8,7 +8,8 @@ plugin:
     - make MOD=1
   install:
     - make install PREFIX=${PREFIX_DIR} MOD=1
-  bundles: []
+  bundles:
+    - zeroconvo.lv2
   dependencies:
     - libsndfile1-dev
     - libsamplerate0-dev

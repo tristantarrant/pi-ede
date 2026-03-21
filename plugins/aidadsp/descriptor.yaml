@@ -9,5 +9,6 @@ plugin:
     - cmake --build bin
   install:
     - make -C bin install DESTDIR=${LV2_DIR}
-  bundles: []
+  bundles:
+    - rt-neural-generic.lv2
   dependencies: []

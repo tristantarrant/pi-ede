@@ -8,5 +8,9 @@ plugin:
     - make mod
   install:
     - make install INSTALL_DIR=${LV2_DIR}
-  bundles: []
+  bundles:
+    - PowerAmpImpulses.lv2
+    - poweramps.lv2
+    - PreAmpImpulses.lv2
+    - PreAmps.lv2
   dependencies: []

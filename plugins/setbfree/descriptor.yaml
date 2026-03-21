@@ -8,5 +8,7 @@ plugin:
     - make OPTIMIZATIONS="-ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only" MOD=1
   install:
     - make install PREFIX=${PREFIX_DIR} MOD=1
-  bundles: []
+  bundles:
+    - b_synth
+    - b_whirl
   dependencies: []

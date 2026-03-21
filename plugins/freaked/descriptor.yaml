@@ -8,5 +8,9 @@ plugin:
     - make BASE_OPTS="-O2 -ffast-math -fdata-sections -ffunction-sections -mcpu=native"
   install:
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - Freakclip.lv2
+    - Freaktail.lv2
+    - Granulator.lv2
+    - Prefreak.lv2
   dependencies: []

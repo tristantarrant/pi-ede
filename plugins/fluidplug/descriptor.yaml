@@ -8,6 +8,32 @@ plugin:
     - make BASE_OPTS="-O2 -ffast-math -fdata-sections -ffunction-sections"
   install:
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - FluidBass.lv2
+    - FluidBrass.lv2
+    - FluidChromPerc.lv2
+    - FluidDrums.lv2
+    - FluidEnsemble.lv2
+    - FluidEthnic.lv2
+    - FluidGM.lv2
+    - FluidGuitars.lv2
+    - FluidOrgans.lv2
+    - FluidPercussion.lv2
+    - FluidPianos.lv2
+    - FluidPipes.lv2
+    - FluidReeds.lv2
+    - FluidSoundFX.lv2
+    - FluidStrings.lv2
+    - FluidSynthFX.lv2
+    - FluidSynthLeads.lv2
+    - FluidSynthPads.lv2
+    - AirFont320.lv2
+    - AVL_Drumkits_Perc.lv2
+    - Black_Pearl_4A.lv2
+    - Black_Pearl_4B.lv2
+    - Black_Pearl_5.lv2
+    - Harmless.lv2
+    - Red_Zeppelin_4.lv2
+    - Red_Zeppelin_5.lv2
   dependencies:
     - libfluidsynth-dev

@@ -9,6 +9,7 @@ plugin:
     - make
   install:
     - make install INSTALL_PATH=${LV2_DIR}
-  bundles: []
+  bundles:
+    - mrfreeze.lv2
   dependencies:
     - libeigen3-dev

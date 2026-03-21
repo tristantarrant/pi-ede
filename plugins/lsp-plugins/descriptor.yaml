@@ -10,6 +10,7 @@ plugin:
     - make
   install:
     - make install
-  bundles: []
+  bundles:
+    - lsp-plugins.lv2
   dependencies:
     - libcairo2-dev

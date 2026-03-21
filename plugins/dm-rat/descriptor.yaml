@@ -15,5 +15,6 @@ plugin:
     - cp -v target/release/*.so *.lv2
     - cp -rv *.lv2 ${LV2_DIR}
     - cd ..
-  bundles: []
+  bundles:
+    - dm-Rat.lv2
   dependencies: []

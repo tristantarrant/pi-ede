@@ -8,5 +8,6 @@ plugin:
     - make
   install:
     - make install INSTALL_PATH=${LV2_DIR}
-  bundles: []
+  bundles:
+    - mod-arpeggiator.lv2
   dependencies: []

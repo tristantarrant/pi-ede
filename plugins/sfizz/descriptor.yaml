@@ -21,5 +21,6 @@ plugin:
     - cmake --build bin
   install:
     - cmake --install bin --prefix=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - sfizz.lv2
   dependencies: []

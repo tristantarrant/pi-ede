@@ -8,5 +8,8 @@ plugin:
     - make HAVE_DGL=false HAVE_FFMPEG=false HAVE_FLUIDSYNTH=false HAVE_HYLIA=false HAVE_LIBLO=false HAVE_PYQT=false HAVE_YSFX=false HAVE_X11=false USING_JUCE=false lv2-bundles
   install:
     - cp -rv bin/*.lv2 ${LV2_DIR}
-  bundles: []
+  bundles:
+    - carla-audiogain.lv2
+    - carla-files.lv2
+    - carla-miditools.lv2
   dependencies: []
