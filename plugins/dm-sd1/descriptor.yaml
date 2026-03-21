@@ -5,11 +5,11 @@ plugin:
     type: git
     url: https://github.com/davemollen/dm-SD1.git
   build:
-    - rustup default nightly
+    - source ~/.cargo/env && rustup default nightly
     - cd lv2
-    - cargo build --release
+    - source ~/.cargo/env && cargo build --release
     - cd ..
-    - rustup default stable
+    - source ~/.cargo/env && rustup default stable
   install:
     - cd lv2
     - cp -v target/release/*.so *.lv2
