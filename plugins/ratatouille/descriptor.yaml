@@ -5,7 +5,8 @@ plugin:
     type: git
     url: https://github.com/brummer10/Ratatouille.lv2.git
   build:
-    - make modapp
+    - make mod
   install:
     - make install INSTALL_DIR=${LV2_DIR}
-  dependencies: []
+  dependencies:
+    - libsndfile1-dev
