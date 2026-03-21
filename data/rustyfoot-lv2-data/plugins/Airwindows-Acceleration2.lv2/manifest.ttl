@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/acceleration2>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-acceleration2.html> ;
+        modgui:stylesheet <modgui/stylesheet-acceleration2.css> ;
+        modgui:screenshot <modgui/screenshot-acceleration2.png> ;
+        modgui:thumbnail <modgui/thumbnail-acceleration2.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Acceleration2" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "red" ;
+        modgui:knob "black" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "limit" ;
+            lv2:name "Limit" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "drywet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .

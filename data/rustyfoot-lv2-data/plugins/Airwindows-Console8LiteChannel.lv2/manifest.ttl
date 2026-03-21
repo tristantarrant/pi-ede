@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/console8litechannel>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-console8litechannel.html> ;
+        modgui:stylesheet <modgui/stylesheet-console8litechannel.css> ;
+        modgui:screenshot <modgui/screenshot-console8litechannel.png> ;
+        modgui:thumbnail <modgui/thumbnail-console8litechannel.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Console8LiteChannel" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "warning" ;
+        modgui:knob "petrol" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "fader" ;
+            lv2:name "Fader" ;
+        ] ;
+    ] .

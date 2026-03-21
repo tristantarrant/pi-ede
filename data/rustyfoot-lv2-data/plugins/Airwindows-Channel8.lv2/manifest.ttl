@@ -1,0 +1,30 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/channel8>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-channel8.html> ;
+        modgui:stylesheet <modgui/stylesheet-channel8.css> ;
+        modgui:screenshot <modgui/screenshot-channel8.png> ;
+        modgui:thumbnail <modgui/thumbnail-channel8.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Channel8" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-select-2-knobs" ;
+        modgui:color "gray" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "consoletype" ;
+            lv2:name "Console Type" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "drive" ;
+            lv2:name "Drive" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "output" ;
+            lv2:name "Output" ;
+        ] ;
+    ] .

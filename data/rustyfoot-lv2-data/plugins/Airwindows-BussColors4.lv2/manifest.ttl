@@ -1,0 +1,34 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/busscolors4>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-busscolors4.html> ;
+        modgui:stylesheet <modgui/stylesheet-busscolors4.css> ;
+        modgui:screenshot <modgui/screenshot-busscolors4.png> ;
+        modgui:thumbnail <modgui/thumbnail-busscolors4.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "BussColors4" ;
+        modgui:model "boxy" ;
+        modgui:panel "4-knobs" ;
+        modgui:color "gray" ;
+        modgui:knob "copper" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "color" ;
+            lv2:name "Color" ;
+        ] , [
+            lv2:index 5 ;
+            lv2:symbol "inputtrim" ;
+            lv2:name "Input Trim" ;
+        ] , [
+            lv2:index 6 ;
+            lv2:symbol "outputtrim" ;
+            lv2:name "Output Trim" ;
+        ] , [
+            lv2:index 7 ;
+            lv2:symbol "dryWet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .

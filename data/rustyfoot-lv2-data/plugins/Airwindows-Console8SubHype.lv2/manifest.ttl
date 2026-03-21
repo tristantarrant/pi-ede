@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/console8subhype>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-console8subhype.html> ;
+        modgui:stylesheet <modgui/stylesheet-console8subhype.css> ;
+        modgui:screenshot <modgui/screenshot-console8subhype.png> ;
+        modgui:thumbnail <modgui/thumbnail-console8subhype.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Console8SubHype" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "racing" ;
+    ] .

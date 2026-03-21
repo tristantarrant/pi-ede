@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/interstage>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-interstage.html> ;
+        modgui:stylesheet <modgui/stylesheet-interstage.css> ;
+        modgui:screenshot <modgui/screenshot-interstage.png> ;
+        modgui:thumbnail <modgui/thumbnail-interstage.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "Interstage" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "wood1" ;
+    ] .

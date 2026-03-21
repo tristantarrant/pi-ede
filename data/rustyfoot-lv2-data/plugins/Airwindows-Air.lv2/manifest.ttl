@@ -1,0 +1,38 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/air>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-air.html> ;
+        modgui:stylesheet <modgui/stylesheet-air.css> ;
+        modgui:screenshot <modgui/screenshot-air.png> ;
+        modgui:thumbnail <modgui/thumbnail-air.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "Air" ;
+        modgui:model "boxy" ;
+        modgui:panel "5-knobs" ;
+        modgui:color "wood2" ;
+        modgui:knob "silver" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "k22Tap" ;
+            lv2:name "22K tap" ;
+        ] , [
+            lv2:index 5 ;
+            lv2:symbol "k15Tap" ;
+            lv2:name "15K tap" ;
+        ] , [
+            lv2:index 6 ;
+            lv2:symbol "k11Tap" ;
+            lv2:name "11K tap" ;
+        ] , [
+            lv2:index 7 ;
+            lv2:symbol "filtersQ" ;
+            lv2:name "fitlers Q" ;
+        ] , [
+            lv2:index 8 ;
+            lv2:symbol "outputLevel" ;
+            lv2:name "Output Level" ;
+        ] ;
+    ] .

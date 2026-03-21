@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/lrconvolve>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-lrconvolve.html> ;
+        modgui:stylesheet <modgui/stylesheet-lrconvolve.css> ;
+        modgui:screenshot <modgui/screenshot-lrconvolve.png> ;
+        modgui:thumbnail <modgui/thumbnail-lrconvolve.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "LRConvolve" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "purple" ;
+    ] .

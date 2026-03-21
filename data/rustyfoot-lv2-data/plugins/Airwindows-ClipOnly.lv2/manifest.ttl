@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/cliponly>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-cliponly.html> ;
+        modgui:stylesheet <modgui/stylesheet-cliponly.css> ;
+        modgui:screenshot <modgui/screenshot-cliponly.png> ;
+        modgui:thumbnail <modgui/thumbnail-cliponly.png> ;
+        modgui:brand "Hannes Bra" ;
+        modgui:label "ClipOnly" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "zinc" ;
+    ] .

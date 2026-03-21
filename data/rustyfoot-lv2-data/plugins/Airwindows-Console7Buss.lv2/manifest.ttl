@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/console7buss>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-console7buss.html> ;
+        modgui:stylesheet <modgui/stylesheet-console7buss.css> ;
+        modgui:screenshot <modgui/screenshot-console7buss.png> ;
+        modgui:thumbnail <modgui/thumbnail-console7buss.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Console7Buss" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "darkblue" ;
+        modgui:knob "black" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "master" ;
+            lv2:name "Master" ;
+        ] ;
+    ] .

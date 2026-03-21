@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/console7cascade>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-console7cascade.html> ;
+        modgui:stylesheet <modgui/stylesheet-console7cascade.css> ;
+        modgui:screenshot <modgui/screenshot-console7cascade.png> ;
+        modgui:thumbnail <modgui/thumbnail-console7cascade.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Console7Cascade" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "white" ;
+        modgui:knob "silver" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "cascade" ;
+            lv2:name "Cascade" ;
+        ] ;
+    ] .

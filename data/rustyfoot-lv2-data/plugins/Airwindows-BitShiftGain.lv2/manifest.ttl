@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/bitshiftgain>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-bitshiftgain.html> ;
+        modgui:stylesheet <modgui/stylesheet-bitshiftgain.css> ;
+        modgui:screenshot <modgui/screenshot-bitshiftgain.png> ;
+        modgui:thumbnail <modgui/thumbnail-bitshiftgain.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "BitShiftGain" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "wood4" ;
+        modgui:knob "steel" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "bitshift" ;
+            lv2:name "BitShift" ;
+        ] ;
+    ] .

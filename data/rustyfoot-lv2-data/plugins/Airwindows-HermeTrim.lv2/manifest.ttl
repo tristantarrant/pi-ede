@@ -1,0 +1,38 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/hermetrim>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-hermetrim.html> ;
+        modgui:stylesheet <modgui/stylesheet-hermetrim.css> ;
+        modgui:screenshot <modgui/screenshot-hermetrim.png> ;
+        modgui:thumbnail <modgui/thumbnail-hermetrim.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "HermeTrim" ;
+        modgui:model "boxy" ;
+        modgui:panel "5-knobs" ;
+        modgui:color "red" ;
+        modgui:knob "bronze" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "left" ;
+            lv2:name "Left" ;
+        ] , [
+            lv2:index 5 ;
+            lv2:symbol "right" ;
+            lv2:name "Right" ;
+        ] , [
+            lv2:index 6 ;
+            lv2:symbol "mid" ;
+            lv2:name "Mid" ;
+        ] , [
+            lv2:index 7 ;
+            lv2:symbol "side" ;
+            lv2:name "Side" ;
+        ] , [
+            lv2:index 8 ;
+            lv2:symbol "master" ;
+            lv2:name "Master" ;
+        ] ;
+    ] .

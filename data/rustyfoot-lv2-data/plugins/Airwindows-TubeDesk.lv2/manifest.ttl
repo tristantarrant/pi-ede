@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/tubedesk>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-tubedesk.html> ;
+        modgui:stylesheet <modgui/stylesheet-tubedesk.css> ;
+        modgui:screenshot <modgui/screenshot-tubedesk.png> ;
+        modgui:thumbnail <modgui/thumbnail-tubedesk.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "TubeDesk" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "yellow" ;
+    ] .

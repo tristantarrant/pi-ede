@@ -1,0 +1,38 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/vibrato>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-vibrato.html> ;
+        modgui:stylesheet <modgui/stylesheet-vibrato.css> ;
+        modgui:screenshot <modgui/screenshot-vibrato.png> ;
+        modgui:thumbnail <modgui/thumbnail-vibrato.png> ;
+        modgui:brand "Hannes Braun" ;
+        modgui:label "Vibrato" ;
+        modgui:model "boxy" ;
+        modgui:panel "7-knobs" ;
+        modgui:color "petrol" ;
+        modgui:knob "gold" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "speed" ;
+            lv2:name "Speed" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "depth" ;
+            lv2:name "Depth" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "fmspeed" ;
+            lv2:name "FM Speed" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "fmdepth" ;
+            lv2:name "FM Depth" ;
+        ] , [
+            lv2:index 4 ;
+            lv2:symbol "invwet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .

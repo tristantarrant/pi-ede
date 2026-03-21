@@ -1,0 +1,34 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/pocketverbs>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-pocketverbs.html> ;
+        modgui:stylesheet <modgui/stylesheet-pocketverbs.css> ;
+        modgui:screenshot <modgui/screenshot-pocketverbs.png> ;
+        modgui:thumbnail <modgui/thumbnail-pocketverbs.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "PocketVerbs" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-select-3-knobs" ;
+        modgui:color "green" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "type" ;
+            lv2:name "Type" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "size" ;
+            lv2:name "Size" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "gating" ;
+            lv2:name "Gating" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "drywet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .

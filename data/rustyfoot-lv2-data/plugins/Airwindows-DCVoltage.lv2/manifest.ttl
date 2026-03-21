@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/dcvoltage>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-dcvoltage.html> ;
+        modgui:stylesheet <modgui/stylesheet-dcvoltage.css> ;
+        modgui:screenshot <modgui/screenshot-dcvoltage.png> ;
+        modgui:thumbnail <modgui/thumbnail-dcvoltage.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "DCVoltage" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "wood0" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "voltage" ;
+            lv2:name "Voltage" ;
+        ] ;
+    ] .

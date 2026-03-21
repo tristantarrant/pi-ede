@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/edisdim>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-edisdim.html> ;
+        modgui:stylesheet <modgui/stylesheet-edisdim.css> ;
+        modgui:screenshot <modgui/screenshot-edisdim.png> ;
+        modgui:thumbnail <modgui/thumbnail-edisdim.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "EdIsDim" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "petrol" ;
+        modgui:knob "gold" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "edisdim" ;
+            lv2:name "ediS/diM" ;
+        ] ;
+    ] .

@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/console8bussin>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-console8bussin.html> ;
+        modgui:stylesheet <modgui/stylesheet-console8bussin.css> ;
+        modgui:screenshot <modgui/screenshot-console8bussin.png> ;
+        modgui:thumbnail <modgui/thumbnail-console8bussin.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Console8BussIn" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "petrol" ;
+    ] .

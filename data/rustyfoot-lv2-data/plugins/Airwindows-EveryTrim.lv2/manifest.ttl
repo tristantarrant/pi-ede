@@ -1,0 +1,38 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/everytrim>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-everytrim.html> ;
+        modgui:stylesheet <modgui/stylesheet-everytrim.css> ;
+        modgui:screenshot <modgui/screenshot-everytrim.png> ;
+        modgui:thumbnail <modgui/thumbnail-everytrim.png> ;
+        modgui:brand "Hannes Braun" ;
+        modgui:label "EveryTrim" ;
+        modgui:model "boxy" ;
+        modgui:panel "7-knobs" ;
+        modgui:color "wood2" ;
+        modgui:knob "gold" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "left" ;
+            lv2:name "Left" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "right" ;
+            lv2:name "Right" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "mid" ;
+            lv2:name "Mid" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "side" ;
+            lv2:name "Side" ;
+        ] , [
+            lv2:index 4 ;
+            lv2:symbol "master" ;
+            lv2:name "Master" ;
+        ] ;
+    ] .

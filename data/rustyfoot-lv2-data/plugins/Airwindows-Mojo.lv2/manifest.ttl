@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/mojo>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-mojo.html> ;
+        modgui:stylesheet <modgui/stylesheet-mojo.css> ;
+        modgui:screenshot <modgui/screenshot-mojo.png> ;
+        modgui:thumbnail <modgui/thumbnail-mojo.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Mojo" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "white" ;
+        modgui:knob "black" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "input" ;
+            lv2:name "Input" ;
+        ] ;
+    ] .

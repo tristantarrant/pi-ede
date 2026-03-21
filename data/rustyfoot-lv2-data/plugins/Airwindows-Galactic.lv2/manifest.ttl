@@ -1,0 +1,38 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/galactic>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-galactic.html> ;
+        modgui:stylesheet <modgui/stylesheet-galactic.css> ;
+        modgui:screenshot <modgui/screenshot-galactic.png> ;
+        modgui:thumbnail <modgui/thumbnail-galactic.png> ;
+        modgui:brand "Hannes Braun" ;
+        modgui:label "Galactic" ;
+        modgui:model "boxy" ;
+        modgui:panel "7-knobs" ;
+        modgui:color "petrol" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "replace" ;
+            lv2:name "Repl" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "brightness" ;
+            lv2:name "Bright" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "detune" ;
+            lv2:name "Detune" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "bigness" ;
+            lv2:name "Bigness" ;
+        ] , [
+            lv2:index 4 ;
+            lv2:symbol "drywet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .

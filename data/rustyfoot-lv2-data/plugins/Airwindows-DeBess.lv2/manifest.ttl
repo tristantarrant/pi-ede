@@ -1,0 +1,38 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/debess>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-debess.html> ;
+        modgui:stylesheet <modgui/stylesheet-debess.css> ;
+        modgui:screenshot <modgui/screenshot-debess.png> ;
+        modgui:thumbnail <modgui/thumbnail-debess.png> ;
+        modgui:brand "Hannes Bra" ;
+        modgui:label "DeBess" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-select-4-knobs" ;
+        modgui:color "cyan" ;
+        modgui:knob "petrol" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "sense" ;
+            lv2:name "Sense" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "intense" ;
+            lv2:name "Intense" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "sharp" ;
+            lv2:name "Sharp" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "depth" ;
+            lv2:name "Depth" ;
+        ] , [
+            lv2:index 4 ;
+            lv2:symbol "filter" ;
+            lv2:name "Filter" ;
+        ] ;
+    ] .

@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/spiral>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-spiral.html> ;
+        modgui:stylesheet <modgui/stylesheet-spiral.css> ;
+        modgui:screenshot <modgui/screenshot-spiral.png> ;
+        modgui:thumbnail <modgui/thumbnail-spiral.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Spiral" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "yellow" ;
+    ] .

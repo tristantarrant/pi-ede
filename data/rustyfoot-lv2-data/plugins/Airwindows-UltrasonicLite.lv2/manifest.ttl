@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/ultrasoniclite>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-ultrasoniclite.html> ;
+        modgui:stylesheet <modgui/stylesheet-ultrasoniclite.css> ;
+        modgui:screenshot <modgui/screenshot-ultrasoniclite.png> ;
+        modgui:thumbnail <modgui/thumbnail-ultrasoniclite.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "UltrasonicLite" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "gold" ;
+    ] .

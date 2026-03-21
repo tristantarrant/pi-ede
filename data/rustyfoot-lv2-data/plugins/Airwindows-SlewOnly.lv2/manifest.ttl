@@ -1,0 +1,16 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/slewonly>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-slewonly.html> ;
+        modgui:stylesheet <modgui/stylesheet-slewonly.css> ;
+        modgui:screenshot <modgui/screenshot-slewonly.png> ;
+        modgui:thumbnail <modgui/thumbnail-slewonly.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "SlewOnly" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "wood1" ;
+    ] .

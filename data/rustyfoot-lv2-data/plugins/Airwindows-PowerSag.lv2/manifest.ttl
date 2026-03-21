@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/powersag>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-powersag.html> ;
+        modgui:stylesheet <modgui/stylesheet-powersag.css> ;
+        modgui:screenshot <modgui/screenshot-powersag.png> ;
+        modgui:thumbnail <modgui/thumbnail-powersag.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "PowerSag" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "wood2" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "depth" ;
+            lv2:name "Depth" ;
+        ] , [
+            lv2:index 5 ;
+            lv2:symbol "speed" ;
+            lv2:name "Speed" ;
+        ] ;
+    ] .

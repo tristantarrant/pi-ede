@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/phasenudge>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-phasenudge.html> ;
+        modgui:stylesheet <modgui/stylesheet-phasenudge.css> ;
+        modgui:screenshot <modgui/screenshot-phasenudge.png> ;
+        modgui:thumbnail <modgui/thumbnail-phasenudge.png> ;
+        modgui:brand "Airwindows" ;
+        modgui:label "PhaseNudge" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "racing" ;
+        modgui:knob "purple" ;
+        modgui:port [
+            lv2:index 4 ;
+            lv2:symbol "phasenudge" ;
+            lv2:name "Phase Nudge" ;
+        ] , [
+            lv2:index 5 ;
+            lv2:symbol "drywet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .

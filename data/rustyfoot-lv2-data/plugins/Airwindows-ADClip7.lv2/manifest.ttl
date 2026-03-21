@@ -1,0 +1,34 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/adclip7>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-adclip7.html> ;
+        modgui:stylesheet <modgui/stylesheet-adclip7.css> ;
+        modgui:screenshot <modgui/screenshot-adclip7.png> ;
+        modgui:thumbnail <modgui/thumbnail-adclip7.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "ADClip7" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-select-3-knobs" ;
+        modgui:color "pink" ;
+        modgui:knob "black" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "mode" ;
+            lv2:name "Mode" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "boost" ;
+            lv2:name "Boost" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "soften" ;
+            lv2:name "Soften" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "enhance" ;
+            lv2:name "Enhance" ;
+        ] ;
+    ] .

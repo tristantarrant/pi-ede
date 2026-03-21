@@ -1,0 +1,22 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/console7channel>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-console7channel.html> ;
+        modgui:stylesheet <modgui/stylesheet-console7channel.css> ;
+        modgui:screenshot <modgui/screenshot-console7channel.png> ;
+        modgui:thumbnail <modgui/thumbnail-console7channel.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Console7Channel" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
+        modgui:color "purple" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "fader" ;
+            lv2:name "Fader" ;
+        ] ;
+    ] .

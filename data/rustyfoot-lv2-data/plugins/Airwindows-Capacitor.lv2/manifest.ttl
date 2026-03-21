@@ -1,0 +1,30 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/capacitor>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-capacitor.html> ;
+        modgui:stylesheet <modgui/stylesheet-capacitor.css> ;
+        modgui:screenshot <modgui/screenshot-capacitor.png> ;
+        modgui:thumbnail <modgui/thumbnail-capacitor.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Capacitor" ;
+        modgui:model "boxy" ;
+        modgui:panel "3-knobs" ;
+        modgui:color "green" ;
+        modgui:knob "copper" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "lowpass" ;
+            lv2:name "Lowpass" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "highpass" ;
+            lv2:name "Highpass" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "drywet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .

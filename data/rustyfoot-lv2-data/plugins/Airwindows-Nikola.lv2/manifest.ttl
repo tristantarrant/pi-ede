@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<https://hannesbraun.net/ns/lv2/airwindows/nikola>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-nikola.html> ;
+        modgui:stylesheet <modgui/stylesheet-nikola.css> ;
+        modgui:screenshot <modgui/screenshot-nikola.png> ;
+        modgui:thumbnail <modgui/thumbnail-nikola.png> ;
+        modgui:brand "Hannes" ;
+        modgui:label "Nikola" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "warning" ;
+        modgui:knob "aluminium" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "voltage" ;
+            lv2:name "Voltage" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "drywet" ;
+            lv2:name "Dry/Wet" ;
+        ] ;
+    ] .
