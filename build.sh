@@ -16,6 +16,17 @@ setup() {
   export MACHINE_ARCH
   export CPU_ARCH
 
+  # Set CPU-optimized compiler flags
+  case $MACHINE_ARCH in
+    aarch64)
+      export CFLAGS="-mcpu=native -O3 -ffast-math -fdata-sections -ffunction-sections"
+      export CXXFLAGS="$CFLAGS"
+      # NOOPT=true skips x86 SSE flags in DPF/tap Makefiles; on aarch64 we
+      # provide proper flags instead
+      export NOOPT=true
+      ;;
+  esac
+
   mkdir -p "$WORK_DIR"/build
   mkdir -p "$WORK_DIR"/download
   mkdir -p "$TARGET_DIR"

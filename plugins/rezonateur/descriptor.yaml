@@ -5,7 +5,7 @@ plugin:
     type: git
     url: https://github.com/jpcima/rezonateur.git
   build:
-    - make NOOPT=true HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true
+    - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true
   install:
     - cp -r bin/*.lv2 ${LV2_DIR}
   bundles: []

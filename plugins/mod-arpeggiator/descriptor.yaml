@@ -5,7 +5,7 @@ plugin:
     type: git
     url: https://github.com/mod-audio/mod-arpeggiator-lv2.git
   build:
-    - make NOOPT=true
+    - make
   install:
     - make install INSTALL_PATH=${LV2_DIR}
   bundles: []

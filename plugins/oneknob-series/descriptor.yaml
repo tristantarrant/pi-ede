@@ -5,7 +5,7 @@ plugin:
     type: git
     url: https://github.com/DISTRHO/OneKnob-Series.git
   build:
-    - make MOD_BUILD=true NOOPT=true WITH_LTO=true
+    - make MOD_BUILD=true WITH_LTO=true
   install:
     - cp -r bin/*.lv2 ${LV2_DIR}
   bundles:

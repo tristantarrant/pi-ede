@@ -11,10 +11,10 @@ plugin:
     - ln -sf ../dpf floaty/dpf
     - ln -sf ../dpf mud/dpf
     - ln -sf ../dpf paranoia/dpf
-    - make -C avocado/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
-    - make -C floaty/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
-    - make -C mud/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
-    - make -C paranoia/source NOOPT=true lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+    - make -C avocado/source lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+    - make -C floaty/source lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+    - make -C mud/source lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
+    - make -C paranoia/source lv2_ttl= CPPFLAGS="-DDISTRHO_PLUGIN_USES_CUSTOM_MODGUI=1 -DSTATIC_BUILD=1"
   install:
     - make -C avocado/source install DESTDIR=${TARGET_DIR}
     - make -C floaty/source install DESTDIR=${TARGET_DIR}
