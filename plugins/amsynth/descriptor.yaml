@@ -10,3 +10,4 @@ plugin:
     - make
   install:
     - make install
+  dependencies: []

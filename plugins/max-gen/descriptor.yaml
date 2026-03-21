@@ -10,3 +10,4 @@ plugin:
     - cd bin
     - cp -rv *.lv2 ${LV2_DIR}
     - cd ..
+  dependencies: []

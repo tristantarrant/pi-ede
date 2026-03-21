@@ -8,3 +8,4 @@ plugin:
     - make
   install:
     - cp -r bin/*.lv2 ${LV2_DIR}
+  dependencies: []

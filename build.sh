@@ -30,8 +30,35 @@ parse() {
   BUILD_COMMANDS=$(yq ".plugin.build" "$1"| sed "s/^- //")
   INSTALL_COMMANDS=$(yq ".plugin.install" "$1"| sed "s/^- //")
   DATA_TYPE=$(yq eval '.plugin.data.type' "$1")
+  DEPENDENCIES=$(yq eval '.plugin.dependencies[]' "$1" 2>/dev/null)
   PLUGIN_DIR=$(pwd)/$(dirname "$1")
   SOURCE_DIR="$WORK_DIR/build/$NAME-$VERSION"
+}
+
+check_dependencies() {
+  if [ -z "$DEPENDENCIES" ]; then
+    return 0
+  fi
+  MISSING=""
+  for pkg in $DEPENDENCIES; do
+    if ! dpkg -s "$pkg" >/dev/null 2>&1; then
+      MISSING="$MISSING $pkg"
+    fi
+  done
+  if [ -n "$MISSING" ]; then
+    echo "=== Missing dependencies for $NAME:$MISSING ==="
+    read -r -p "Install them now? [Y/n] " answer
+    case "$answer" in
+      [nN]*)
+        echo "Skipping $NAME (missing dependencies)"
+        return 1
+        ;;
+      *)
+        sudo apt-get install -y $MISSING || return 1
+        ;;
+    esac
+  fi
+  return 0
 }
 
 download() {
@@ -138,6 +165,9 @@ for PLUGIN in "$@"; do
   if [ -f "$DESC" ]; then
     parse "$DESC"
     echo "Plugin: $PLUGIN"
+    if ! check_dependencies; then
+      continue
+    fi
     if [ $CLEAN = true ]; then
       clean "$DESC"
     fi

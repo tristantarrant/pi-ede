@@ -9,3 +9,4 @@ plugin:
 
   install:
     - make install INSTALL_DIR=${LV2_DIR} BUILD_VST2=false BUILD_JACK=false
+  dependencies: []

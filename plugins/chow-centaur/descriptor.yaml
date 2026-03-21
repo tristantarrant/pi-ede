@@ -9,3 +9,4 @@ plugin:
     - cmake --build bin
   install:
     - find bin -name '*.lv2' -exec cp -r {} ${LV2_DIR} \;
+  dependencies: []

@@ -9,3 +9,4 @@ plugin:
     - cmake --build bin
   install:
     - make -C bin install DESTDIR=${LV2_DIR}
+  dependencies: []

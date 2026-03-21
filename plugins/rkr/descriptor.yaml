@@ -11,3 +11,4 @@ plugin:
     type: rkr.lv2
   install:
     - make -C bin install DESTDIR=${TARGET_DIR}
+  dependencies: []

@@ -8,3 +8,4 @@ plugin:
     - make
   install:
     - make install PREFIX=${PREFIX_DIR}
+  dependencies: []

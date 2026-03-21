@@ -8,3 +8,4 @@ plugin:
     - make
   install:
     - make install LV2_DESTDIR=${LV2_DIR}
+  dependencies: []

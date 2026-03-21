@@ -10,3 +10,4 @@ plugin:
   install:
     - cmake --install bin --prefix=${PREFIX_DIR}
 
+  dependencies: []

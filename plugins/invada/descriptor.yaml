@@ -10,3 +10,4 @@ plugin:
     - make
   install:
     - make install-sys INSTALL_SYS_PLUGINS_DIR=${LV2_DIR}
+  dependencies: []

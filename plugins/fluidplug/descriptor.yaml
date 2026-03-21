@@ -8,3 +8,4 @@ plugin:
     - make BASE_OPTS="-O2 -ffast-math -fdata-sections -ffunction-sections"
   install:
     - make install PREFIX=${PREFIX_DIR}
+  dependencies: []

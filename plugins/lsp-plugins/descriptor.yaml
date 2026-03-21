@@ -10,3 +10,4 @@ plugin:
     - make
   install:
     - echo INSTALL
+  dependencies: []
