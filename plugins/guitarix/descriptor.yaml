@@ -16,3 +16,6 @@ plugin:
   bundles: []
   dependencies:
     - libzita-convolver-dev
+    - libzita-resampler-dev
+    - libsigc++-2.0-dev
+    - gperf
