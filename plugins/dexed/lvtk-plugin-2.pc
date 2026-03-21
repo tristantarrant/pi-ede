@@ -1,0 +1,10 @@
+prefix=@PREFIX@
+libdir=@PREFIX@/lib
+includedir=@PREFIX@/include
+
+Name: lvtk-plugin-2
+Version: 1.2.0
+Description: LV2 Toolkit Plugin Library (v1 compat)
+Requires: lv2
+Libs: -L${libdir} -llvtk_plugin-1
+Cflags: -I${includedir}/lvtk-1
