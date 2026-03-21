@@ -82,17 +82,17 @@ download() {
       if [ ! -f "$DOWNLOAD" ]; then
         wget -O "$DOWNLOAD" "$URL"
       fi
-      pushd "$WORK_DIR/build" > /dev/null || exit
-      tar xzf "$DOWNLOAD"
-      cd "$NAME"* || exit
-      popd || exit
+      pushd "$WORK_DIR/build" > /dev/null || return 1
+      tar xzf "$DOWNLOAD" || { popd > /dev/null; return 1; }
+      cd "$NAME"* || { popd > /dev/null; return 1; }
+      popd > /dev/null || return 1
       ;;
     git)
       if [ ! -d "$SOURCE_DIR" ]; then
         URL=$(yq eval '.plugin.source.url' "$1")
-        pushd "$WORK_DIR/build" || exit
-        git clone --branch "$VERSION" --depth 1 --recurse-submodules "$URL" "$NAME-$VERSION"
-        popd > /dev/null || exit
+        pushd "$WORK_DIR/build" > /dev/null || return 1
+        git clone --branch "$VERSION" --depth 1 --recurse-submodules "$URL" "$NAME-$VERSION" || { popd > /dev/null; return 1; }
+        popd > /dev/null
       fi
       ;;
     *)
@@ -111,12 +111,16 @@ prepare() {
 }
 
 build() {
-  pushd "$SOURCE_DIR" > /dev/null || exit
+  pushd "$SOURCE_DIR" > /dev/null || return 1
   while IFS= read -r line; do
       echo "Executing: $line"
-      eval "$line" || exit
+      if ! eval "$line"; then
+        echo "FAILED: $NAME (build command: $line)"
+        popd > /dev/null
+        return 1
+      fi
   done <<< "$BUILD_COMMANDS"
-  popd > /dev/null  || exit
+  popd > /dev/null
 }
 
 install() {
@@ -128,12 +132,16 @@ install() {
   fi
   echo "Bundles:"
   echo "$PLUGINS"
-  pushd "$SOURCE_DIR" > /dev/null || exit
+  pushd "$SOURCE_DIR" > /dev/null || return 1
   while IFS= read -r line; do
       echo "Executing: ${line}"
-      eval "$line" || exit
+      if ! eval "$line"; then
+        echo "FAILED: $NAME (install command: $line)"
+        popd > /dev/null
+        return 1
+      fi
   done <<< "$INSTALL_COMMANDS"
-  popd > /dev/null || exit
+  popd > /dev/null
 
   case $DATA_TYPE in
     local)
@@ -193,23 +201,49 @@ do
 done
 
 setup
+FAILED_PLUGINS=()
+SUCCEEDED=0
 for PLUGIN in "$@"; do
   DESC="$DIR/plugins/$PLUGIN/descriptor.yaml"
   if [ -f "$DESC" ]; then
     parse "$DESC"
     echo "Plugin: $PLUGIN"
     if ! check_dependencies; then
+      FAILED_PLUGINS+=("$PLUGIN (missing dependencies)")
       continue
     fi
     if [ $CLEAN = true ]; then
       clean "$DESC"
     fi
-    download "$DESC"
+    if ! download "$DESC"; then
+      FAILED_PLUGINS+=("$PLUGIN (download)")
+      continue
+    fi
     prepare "$DESC"
-    build "$DESC"
-    install "$DESC"
+    if ! build "$DESC"; then
+      FAILED_PLUGINS+=("$PLUGIN (build)")
+      continue
+    fi
+    if ! install "$DESC"; then
+      FAILED_PLUGINS+=("$PLUGIN (install)")
+      continue
+    fi
     package
+    SUCCEEDED=$((SUCCEEDED + 1))
   else
     echo "Plugin $PLUGIN doesn't have a descriptor"
+    FAILED_PLUGINS+=("$PLUGIN (no descriptor)")
   fi
 done
+
+echo ""
+echo "=== Summary ==="
+echo "Succeeded: $SUCCEEDED"
+echo "Failed: ${#FAILED_PLUGINS[@]}"
+if [ ${#FAILED_PLUGINS[@]} -gt 0 ]; then
+  echo ""
+  echo "Failed plugins:"
+  for p in "${FAILED_PLUGINS[@]}"; do
+    echo "  - $p"
+  done
+fi
