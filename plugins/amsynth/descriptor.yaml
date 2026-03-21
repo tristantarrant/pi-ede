@@ -13,3 +13,4 @@ plugin:
   bundles: []
   dependencies:
     - intltool
+    - autoconf-archive
