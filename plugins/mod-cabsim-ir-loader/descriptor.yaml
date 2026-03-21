@@ -12,4 +12,5 @@ plugin:
     - pushd source
     - make install DESTDIR=${TARGET_DIR} PREFIX=/usr
     - popd
+  bundles: []
   dependencies: []

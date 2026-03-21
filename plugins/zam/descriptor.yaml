@@ -8,4 +8,5 @@ plugin:
     - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true NOOPT=true
   install:
     - make install PREFIX=${PREFIX_DIR}
+  bundles: []
   dependencies: []

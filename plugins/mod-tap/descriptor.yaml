@@ -8,4 +8,5 @@ plugin:
     - make -DNO
   install:
     - echo INSTALL
+  bundles: []
   dependencies: []

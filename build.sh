@@ -30,6 +30,7 @@ parse() {
   BUILD_COMMANDS=$(yq ".plugin.build" "$1"| sed "s/^- //")
   INSTALL_COMMANDS=$(yq ".plugin.install" "$1"| sed "s/^- //")
   DATA_TYPE=$(yq eval '.plugin.data.type' "$1")
+  BUNDLES=$(yq eval '.plugin.bundles[]' "$1" 2>/dev/null)
   DEPENDENCIES=$(yq eval '.plugin.dependencies[]' "$1" 2>/dev/null)
   PLUGIN_DIR=$(pwd)/$(dirname "$1")
   SOURCE_DIR="$WORK_DIR/build/$NAME-$VERSION"
@@ -109,8 +110,12 @@ build() {
 
 install() {
   echo "=== Install: $NAME ==="
-  PLUGINS=$(find "$SOURCE_DIR" -type d -name "*.lv2" -exec basename {} \;| sort|uniq)
-  echo "Plugins:"
+  if [ -n "$BUNDLES" ]; then
+    PLUGINS="$BUNDLES"
+  else
+    PLUGINS=$(find "$SOURCE_DIR" -type d -name "*.lv2" -exec basename {} \;| sort|uniq)
+  fi
+  echo "Bundles:"
   echo "$PLUGINS"
   pushd "$SOURCE_DIR" > /dev/null || exit
   while IFS= read -r line; do
@@ -122,7 +127,7 @@ install() {
   case $DATA_TYPE in
     local)
       ;;
-    null) 
+    null)
       for PLUGIN in $PLUGINS; do
         find "$DIR/data" -name "$PLUGIN" -type d -exec cp -rv {} "$LV2_DIR" \;
       done
@@ -131,6 +136,23 @@ install() {
       find "$DIR/data" -name "$DATA_TYPE" -type d -exec cp -rv {} "$LV2_DIR" \;
       ;;
   esac
+}
+
+package() {
+  echo "=== Package: $NAME ==="
+  BUILD_DATE=$(date +%Y%m%d)
+  PACKAGE_DIR="$WORK_DIR/packages"
+  mkdir -p "$PACKAGE_DIR"
+  for BUNDLE in $PLUGINS; do
+    BUNDLE_PATH="$LV2_DIR/$BUNDLE"
+    if [ ! -d "$BUNDLE_PATH" ]; then
+      echo "Warning: bundle $BUNDLE not found at $BUNDLE_PATH, skipping"
+      continue
+    fi
+    ARCHIVE_NAME="${BUNDLE%.lv2}-${VERSION}-${BUILD_DATE}-${MACHINE_ARCH}.tar.gz"
+    tar -czf "$PACKAGE_DIR/$ARCHIVE_NAME" -C "$LV2_DIR" "$BUNDLE"
+    echo "Packaged: $PACKAGE_DIR/$ARCHIVE_NAME"
+  done
 }
 
 clean() {
@@ -175,6 +197,7 @@ for PLUGIN in "$@"; do
     prepare "$DESC"
     build "$DESC"
     install "$DESC"
+    package
   else
     echo "Plugin $PLUGIN doesn't have a descriptor"
   fi

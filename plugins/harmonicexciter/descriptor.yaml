@@ -7,4 +7,6 @@ plugin:
   build:
     - make mod
   install:
-    - make install INSTALL_DIR=${LV2_DIR}  dependencies: []
+    - make install INSTALL_DIR=${LV2_DIR}
+  bundles: []
+  dependencies: []

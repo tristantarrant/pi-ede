@@ -10,4 +10,5 @@ plugin:
     - make
   install:
     - make install
+  bundles: []
   dependencies: []

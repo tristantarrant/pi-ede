@@ -20,4 +20,5 @@ plugin:
     - make -C floaty/source install DESTDIR=${TARGET_DIR}
     - make -C mud/source install DESTDIR=${TARGET_DIR}
     - make -C paranoia/source install DESTDIR=${TARGET_DIR}
+  bundles: []
   dependencies: []

@@ -9,4 +9,5 @@ plugin:
     - make NOOPT=true
   install:
     - make install INSTALL_PATH=${LV2_DIR}
+  bundles: []
   dependencies: []

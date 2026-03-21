@@ -10,4 +10,5 @@ plugin:
     - pushd bin
     - cp -rv *.lv2 ${LV2_DIR}
     - popd
+  bundles: []
   dependencies: []

@@ -9,4 +9,5 @@ plugin:
     - meson compile -C build
   install:
     - meson install -C build
+  bundles: []
   dependencies: []

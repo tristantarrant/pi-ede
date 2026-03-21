@@ -9,4 +9,5 @@ plugin:
     - ./waf
   install:
     - ./waf install --destdir=${TARGET_DIR}
+  bundles: []
   dependencies: []

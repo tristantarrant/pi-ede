@@ -13,4 +13,5 @@ plugin:
   install:
     - cd trunk
     - ./waf install --destdir=${TARGET_DIR}
+  bundles: []
   dependencies: []

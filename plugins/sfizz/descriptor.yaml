@@ -21,4 +21,5 @@ plugin:
     - cmake --build bin
   install:
     - cmake --install bin --prefix=${PREFIX_DIR}
+  bundles: []
   dependencies: []

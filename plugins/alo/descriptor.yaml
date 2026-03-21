@@ -10,4 +10,5 @@ plugin:
   install:
     - cd source
     - make install PREFIX=${PREFIX_DIR}
+  bundles: []
   dependencies: []

@@ -10,4 +10,5 @@ plugin:
     - make
   install:
     - echo INSTALL
+  bundles: []
   dependencies: []

@@ -8,4 +8,5 @@ plugin:
     - make BUILD_UI=false
   install:
     - make install PREFIX=${PREFIX_DIR}
+  bundles: []
   dependencies: []

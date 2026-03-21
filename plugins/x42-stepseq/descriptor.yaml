@@ -12,4 +12,5 @@ plugin:
     - make clean install MOD=1 N_STEPS=32 N_NOTES=8 LV2DIR=${LV2_DIR}
   install:
     - true
+  bundles: []
   dependencies: []
