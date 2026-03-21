@@ -5,8 +5,9 @@ plugin:
     type: git
     url: https://github.com/DISTRHO/DISTRHO-Ports
   build:
-    - make
+    - meson setup build --buildtype=release -Dplugins=tal-reverb,tal-reverb-2,tal-reverb-3 --prefix=/usr
+    - ninja -C build
   install:
-    - make install PREFIX=${PREFIX_DIR}
+    - DESTDIR=${TARGET_DIR} ninja -C build install
   bundles: []
   dependencies: []
