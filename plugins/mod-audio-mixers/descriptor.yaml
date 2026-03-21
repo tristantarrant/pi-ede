@@ -8,5 +8,7 @@ plugin:
     - make
   install:
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - mod-mixer-stereo.lv2
+    - mod-mixer.lv2
   dependencies: []

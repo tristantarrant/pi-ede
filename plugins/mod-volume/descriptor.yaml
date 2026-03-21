@@ -10,5 +10,7 @@ plugin:
     - mkdir -p volume/source/mod-volume.lv2/modgui
     - mkdir -p volume-2x2/source/mod-volume-2x2.lv2/modgui
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - mod-volume.lv2
+    - mod-volume-2x2.lv2
   dependencies: []

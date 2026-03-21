@@ -8,5 +8,13 @@ plugin:
     - make
   install:
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - midi-clock-info.lv2
+    - midi-switchbox_1-2.lv2
+    - midi-switchbox_1-2_2C.lv2
+    - midi-switchbox_1-3.lv2
+    - midi-switchbox_2-1.lv2
+    - midi-switchbox_2-1_2C.lv2
+    - midi-switchbox_3-1.lv2
+    - peak-to-cc.lv2
   dependencies: []

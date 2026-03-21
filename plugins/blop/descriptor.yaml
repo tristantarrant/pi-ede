@@ -9,5 +9,7 @@ plugin:
     - meson compile -C build
   install:
     - meson install -C build
-  bundles: []
-  dependencies: []
+  bundles:
+    - blop.lv2
+  dependencies:
+    - meson

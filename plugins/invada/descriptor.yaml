@@ -10,5 +10,6 @@ plugin:
     - make
   install:
     - make install-sys INSTALL_SYS_PLUGINS_DIR=${LV2_DIR}
-  bundles: []
+  bundles:
+    - invada.lv2
   dependencies: []

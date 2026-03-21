@@ -8,5 +8,6 @@ plugin:
     - make mod
   install:
     - make install INSTALL_DIR=${LV2_DIR}
-  bundles: []
+  bundles:
+    - gx_luna.lv2
   dependencies: []

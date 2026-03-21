@@ -7,6 +7,19 @@ plugin:
   build:
     - make
   install:
-    - make install INSTALL_PATH=${LV2_DIR}
-  bundles: []
+    - make install DESTDIR=${TARGET_DIR} PREFIX=/usr INSTALL_PATH=/usr/lib/lv2
+  bundles:
+    - mod-bpf.lv2
+    - mod-crossover2.lv2
+    - mod-crossover3.lv2
+    - mod-gain.lv2
+    - mod-gain2x2.lv2
+    - mod-hpf.lv2
+    - mod-lpf.lv2
+    - mod-switchtrigger4.lv2
+    - mod-toggleswitch4.lv2
+    - switchbox_1-2.lv2
+    - switchbox_1-2_st.lv2
+    - switchbox_2-1.lv2
+    - switchbox_2-1_st.lv2
   dependencies: []

@@ -7,7 +7,13 @@ plugin:
   build:
     - make MOD_BUILD=true NOOPT=true WITH_LTO=true
   install:
-    - make install
-
-  bundles: []
+    - cp -r bin/*.lv2 ${LV2_DIR}
+  bundles:
+    - MOD-ConvolutionLoader.lv2
+    - OK-AB-InputSelector.lv2
+    - OK-AB-OutputSelector.lv2
+    - OK-BrickwallLimiter.lv2
+    - OK-Compressor.lv2
+    - OK-DevilDistortion.lv2
+    - OK-Filter.lv2
   dependencies: []

@@ -5,8 +5,10 @@ plugin:
     type: git
     url: https://github.com/jpcima/stone-phaser.git
   build:
-    - make BUILD_UI=false
+    - make plugins BUILD_UI=false
   install:
-    - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+    - cp -r bin/*.lv2 ${LV2_DIR}
+  bundles:
+    - stone-phaser.lv2
+    - stone-phaser-stereo.lv2
   dependencies: []

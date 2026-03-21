@@ -9,5 +9,6 @@ plugin:
   install:
     - make install PREFIX=${PREFIX_DIR}
 
-  bundles: []
+  bundles:
+    - abGate.lv2
   dependencies: []

@@ -8,5 +8,9 @@ plugin:
     - make NOOPT=true
   install:
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - Harmless.lv2
+    - Larynx.lv2
+    - Modulay.lv2
+    - Shiroverb.lv2
   dependencies: []

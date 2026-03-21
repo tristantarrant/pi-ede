@@ -8,5 +8,6 @@ plugin:
     - make
   install:
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - bolliedelay.lv2
   dependencies: []

@@ -10,4 +10,5 @@ plugin:
   install:
     - meson install -C build
   bundles: []
-  dependencies: []
+  dependencies:
+    - meson

@@ -8,5 +8,6 @@ plugin:
     - make MOD=1 OPTIMIZATIONS="-ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only"
   install:
     - make install PREFIX=${PREFIX_DIR}
-  bundles: []
+  bundles:
+    - modmeter.lv2
   dependencies: []

@@ -12,4 +12,5 @@ plugin:
     - for i in *.so; do NAME=$(basename $i .so); PLUGIN=mod-mda-${NAME}.lv2; mkdir -p ${LV2_DIR}/${PLUGIN}; cp ${NAME}.* ${LV2_DIR}/${PLUGIN}; find "$DATA_DIR" -name "$PLUGIN" -type d -exec cp -rv {} ${LV2_DIR} \; ; done
     - popd
   bundles: []
-  dependencies: []
+  dependencies:
+    - meson

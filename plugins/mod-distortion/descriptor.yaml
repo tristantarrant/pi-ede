@@ -8,5 +8,7 @@ plugin:
     - make
   install:
     - make install INSTALL_PATH=${LV2_DIR}
-  bundles: []
+  bundles:
+    - mod-ds1.lv2
+    - mod-bigmuff.lv2
   dependencies: []

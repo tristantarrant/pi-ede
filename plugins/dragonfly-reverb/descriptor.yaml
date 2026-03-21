@@ -8,5 +8,9 @@ plugin:
     - make HAVE_CAIRO=false HAVE_OPENGL=false MOD_BUILD=true
   install:
     - cp -r bin/*.lv2 ${LV2_DIR}
-  bundles: []
+  bundles:
+    - DragonflyEarlyReflections.lv2
+    - DragonflyHallReverb.lv2
+    - DragonflyPlateReverb.lv2
+    - DragonflyRoomReverb.lv2
   dependencies: []
