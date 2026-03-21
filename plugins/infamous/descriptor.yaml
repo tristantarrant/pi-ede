@@ -10,4 +10,5 @@ plugin:
   install:
     - cmake --install bin
   bundles: []
-  dependencies: []
+  dependencies:
+    - libzita-resampler-dev
