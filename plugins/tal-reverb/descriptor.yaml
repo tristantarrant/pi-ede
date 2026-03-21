@@ -1,6 +1,6 @@
 plugin:
   name: tal-reverb
-  version: main
+  version: master
   source:
     type: git
     url: https://github.com/DISTRHO/DISTRHO-Ports

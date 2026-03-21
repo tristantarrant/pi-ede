@@ -12,3 +12,4 @@ plugin:
   bundles: []
   dependencies:
     - libvterm-dev
+    - libxxhash-dev

@@ -1,13 +1,13 @@
 plugin:
-  name: midimisg
+  name: midimsg
   version: master
   source:
     type: git
     url: https://github.com/blablack/midimsg-lv2.git
   build:
-    - ./waf configure --prefix=/usr
-    - ./waf
+    - for p in controller modwheel aftertouch; do g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $(pkg-config --cflags lv2) -o midimsg.lv2/$p.so src/$p.cpp $(pkg-config --libs lv2) && echo "Built $p"; done
   install:
-    - ./waf install --destdir=${TARGET_DIR}
-  bundles: []
+    - cp -r midimsg.lv2 ${LV2_DIR}/
+  bundles:
+    - midimsg.lv2
   dependencies: []

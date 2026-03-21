@@ -1,0 +1,16 @@
+diff --git a/src/lv2-plugin.cpp b/src/lv2-plugin.cpp
+--- a/src/lv2-plugin.cpp
++++ b/src/lv2-plugin.cpp
+@@ -253,12 +253,7 @@
+                                uint32_t, const LV2_Feature* const*)
+     {
+-        if (dev != nullptr && dev->config.deviceID)
+-        {
+-            store(handle, uris.deviceid, dev->config.deviceID, std::strlen(dev->config.deviceID) + 1,
+-                  uris.atom_String, LV2_STATE_IS_POD|LV2_STATE_IS_PORTABLE);
+-        }
+-        else if (deviceID != nullptr)
++        if (deviceID != nullptr)
+         {
+             store(handle, uris.deviceid, deviceID, std::strlen(deviceID) + 1,
+                   uris.atom_String, LV2_STATE_IS_POD|LV2_STATE_IS_PORTABLE);

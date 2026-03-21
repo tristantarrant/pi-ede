@@ -1,0 +1,12 @@
+diff --git a/Ext/Resvg4JUCE/CMakeLists.txt b/Ext/Resvg4JUCE/CMakeLists.txt
+--- a/Ext/Resvg4JUCE/CMakeLists.txt
++++ b/Ext/Resvg4JUCE/CMakeLists.txt
+@@ -61,7 +61,7 @@
+     target_link_libraries (resvg INTERFACE bcrypt)
+ endif()
+
+-if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
++if ((CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU") AND CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|i686|AMD64")
+     target_compile_options (resvg INTERFACE -mssse3)
+ endif()
+
