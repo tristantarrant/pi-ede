@@ -12,5 +12,9 @@ plugin:
     - make install
   bundles:
     - lsp-plugins.lv2
+  modgui:
+    brand: LSP
+    color: darkblue
+    knob: steel
   dependencies:
     - libcairo2-dev

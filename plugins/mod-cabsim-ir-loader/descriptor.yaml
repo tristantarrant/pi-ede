@@ -14,4 +14,8 @@ plugin:
     - popd
   bundles:
     - cabsim-IR-loader.lv2
+    - MOD-CabinetLoader.lv2
+  modgui:
+    brand: MOD
+    color: black
   dependencies: []

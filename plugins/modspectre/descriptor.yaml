@@ -10,4 +10,7 @@ plugin:
     - make install PREFIX=${PREFIX_DIR}
   bundles:
     - modspectre.lv2
+  modgui:
+    brand: x42
+    color: gray
   dependencies: []

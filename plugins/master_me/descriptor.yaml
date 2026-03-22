@@ -10,4 +10,8 @@ plugin:
     - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
   bundles:
     - master_me.lv2
+    - master_me-easy-presets.lv2
+  modgui:
+    brand: master_me
+    color: wood1
   dependencies: []

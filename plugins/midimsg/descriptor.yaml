@@ -10,4 +10,7 @@ plugin:
     - cp -r midimsg.lv2 ${LV2_DIR}/
   bundles:
     - midimsg.lv2
+  modgui:
+    brand: MIDI
+    color: blue
   dependencies: []

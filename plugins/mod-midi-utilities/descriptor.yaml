@@ -17,4 +17,7 @@ plugin:
     - midi-switchbox_2-1_2C.lv2
     - midi-switchbox_3-1.lv2
     - peak-to-cc.lv2
+  modgui:
+    brand: MOD
+    color: cyan
   dependencies: []

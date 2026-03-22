@@ -31,4 +31,7 @@ plugin:
     - mod-cv-transport.lv2
     - mod-midi-to-cv-mono.lv2
     - mod-midi-to-cv-poly.lv2
+  modgui:
+    brand: MOD
+    color: petrol
   dependencies: []

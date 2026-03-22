@@ -27,4 +27,8 @@ plugin:
     - ZaMultiComp.lv2
     - ZaMultiCompX2.lv2
     - ZamVerb.lv2
+  modgui:
+    brand: ZamAudio
+    color: gold
+    knob: gold
   dependencies: []

@@ -11,4 +11,7 @@ plugin:
     - cmake --install bin --prefix=${PREFIX_DIR}
   bundles:
     - fabla2.lv2
+  modgui:
+    brand: OpenAV
+    color: orange
   dependencies: []

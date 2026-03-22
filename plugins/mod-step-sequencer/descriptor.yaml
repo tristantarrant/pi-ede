@@ -10,4 +10,7 @@ plugin:
     - cp -rv bin/mod-step-sequencer.lv2 ${LV2_DIR}/
   bundles:
     - mod-step-sequencer.lv2
+  modgui:
+    brand: MOD
+    color: green
   dependencies: []

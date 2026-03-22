@@ -22,5 +22,8 @@ plugin:
     - powercut.lv2
     - powerup.lv2
     - stuck.lv2
+  modgui:
+    brand: Infamous
+    color: purple
   dependencies:
     - libzita-resampler-dev

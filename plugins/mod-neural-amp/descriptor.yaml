@@ -11,4 +11,7 @@ plugin:
     - DESTDIR=${TARGET_DIR} cmake --install .
   bundles:
     - mod-neural-amp.lv2
+  modgui:
+    brand: MOD
+    color: lava
   dependencies: []

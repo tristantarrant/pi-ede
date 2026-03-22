@@ -16,4 +16,7 @@ plugin:
     - OK-Compressor.lv2
     - OK-DevilDistortion.lv2
     - OK-Filter.lv2
+  modgui:
+    brand: DISTRHO
+    color: cream
   dependencies: []

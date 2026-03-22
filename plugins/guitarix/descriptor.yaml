@@ -89,6 +89,10 @@ plugin:
     - gx_vstb.lv2
     - gx_w20.lv2
     - gx_zita_rev1.lv2
+  modgui:
+    brand: Guitarix
+    color: black
+    knob: bronze
   dependencies:
     - libzita-convolver-dev
     - libzita-resampler-dev

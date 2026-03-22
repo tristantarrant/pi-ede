@@ -9,10 +9,19 @@ plugin:
   install:
     - cp -rv bin/*.lv2 ${LV2_DIR}/
   bundles:
+    - 3BandEQ.lv2
+    - 3BandSplitter.lv2
+    - AmplitudeImposer.lv2
+    - CycleShifter.lv2
     - Kars.lv2
+    - MaBitcrush.lv2
+    - MaFreeverb.lv2
+    - MaGigaverb.lv2
+    - MaPitchshift.lv2
     - MVerb.lv2
     - Nekobi.lv2
     - PingPongPan.lv2
+    - SoulForce.lv2
   modgui:
     brand: DISTRHO
   dependencies: []

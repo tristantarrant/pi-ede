@@ -22,4 +22,7 @@ plugin:
     - switchbox_1-2_st.lv2
     - switchbox_2-1.lv2
     - switchbox_2-1_st.lv2
+  modgui:
+    brand: MOD
+    color: green
   dependencies: []
