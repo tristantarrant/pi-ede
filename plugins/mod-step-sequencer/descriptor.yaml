@@ -1,6 +1,6 @@
 plugin:
   name: mod-step-sequencer
-  version: master
+  version: main
   source:
     type: git
     url: https://github.com/moddevices/mod-step-sequencer-lv2.git

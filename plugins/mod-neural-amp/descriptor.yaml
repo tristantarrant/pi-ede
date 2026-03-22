@@ -6,7 +6,7 @@ plugin:
     url: https://github.com/moddevices/mod-neural-amp.git
   build:
     - cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${PREFIX_DIR}
-    - cmake --build build -j2
+    - cmake --build build
   install:
     - cmake --install build
   bundles:

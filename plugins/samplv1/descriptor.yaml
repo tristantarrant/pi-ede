@@ -5,14 +5,10 @@ plugin:
     type: git
     url: https://github.com/moddevices/samplv1.git
   build:
-    - autoreconf -i
-    - ./configure --disable-jack --disable-lv2-ui-x11 --disable-lv2-ui-external --enable-lv2-port-event=no --prefix=/usr
-    - make
+    - cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCONFIG_JACK=OFF -DCONFIG_LV2_UI_X11=OFF -DCONFIG_LV2_UI_EXTERNAL=OFF -DCMAKE_INSTALL_PREFIX=${PREFIX_DIR}
+    - cmake --build build
   install:
-    - make install DESTDIR=${TARGET_DIR}
+    - cmake --install build
   bundles:
     - samplv1.lv2
-  dependencies:
-    - autoconf
-    - automake
-    - libtool
+  dependencies: []

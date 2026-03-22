@@ -1,6 +1,6 @@
 plugin:
   name: max-gen-zwabo
-  version: master
+  version: main
   source:
     type: git
     url: https://github.com/moddevices/max-gen-plugins.git

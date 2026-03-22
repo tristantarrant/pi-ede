@@ -7,7 +7,7 @@ plugin:
   build:
     - make HAVE_CAIRO=false HAVE_DGL=false HAVE_OPENGL=false
   install:
-    - make install PREFIX=${PREFIX_DIR} DESTDIR=${TARGET_DIR}
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
   bundles:
     - Kars.lv2
     - MVerb.lv2
