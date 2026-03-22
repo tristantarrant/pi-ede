@@ -1,0 +1,16 @@
+plugin:
+  name: neuralrecord
+  version: main
+  source:
+    type: git
+    url: https://github.com/brummer10/neuralrecord.git
+  build:
+    - make mod
+  install:
+    - make install-mod DESTDIR=${TARGET_DIR} LV2_DIR=/usr/lib/lv2
+  bundles:
+    - neuralrecord.lv2
+  modgui:
+    brand: Brummer
+  dependencies:
+    - libsndfile1-dev

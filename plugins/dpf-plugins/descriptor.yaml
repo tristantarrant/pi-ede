@@ -1,0 +1,18 @@
+plugin:
+  name: dpf-plugins
+  version: main
+  source:
+    type: git
+    url: https://github.com/DISTRHO/DPF-Plugins.git
+  build:
+    - make HAVE_CAIRO=false HAVE_DGL=false HAVE_OPENGL=false
+  install:
+    - make install PREFIX=${PREFIX_DIR} DESTDIR=${TARGET_DIR}
+  bundles:
+    - Kars.lv2
+    - MVerb.lv2
+    - Nekobi.lv2
+    - PingPongPan.lv2
+  modgui:
+    brand: DISTRHO
+  dependencies: []

@@ -1,0 +1,13 @@
+plugin:
+  name: mod-step-sequencer
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/mod-step-sequencer-lv2.git
+  build:
+    - make HAVE_CAIRO=false HAVE_GL=false
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+  bundles:
+    - mod-step-sequencer.lv2
+  dependencies: []

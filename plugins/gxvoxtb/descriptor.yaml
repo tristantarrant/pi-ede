@@ -1,0 +1,15 @@
+plugin:
+  name: gxvoxtb
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/gx_vobtb.lv2.git
+  build:
+    - make
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}
+  bundles:
+    - gx_voxtb.lv2
+  modgui:
+    brand: Brummer
+  dependencies: []

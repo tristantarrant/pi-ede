@@ -1,0 +1,13 @@
+plugin:
+  name: x42-midigen
+  version: master
+  source:
+    type: git
+    url: https://github.com/x42/midigen.lv2.git
+  build:
+    - make PREFIX=/usr
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+  bundles:
+    - midigen.lv2
+  dependencies: []

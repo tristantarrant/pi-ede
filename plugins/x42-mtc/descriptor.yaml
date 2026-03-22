@@ -1,0 +1,13 @@
+plugin:
+  name: x42-mtc
+  version: master
+  source:
+    type: git
+    url: https://github.com/x42/mtc.lv2.git
+  build:
+    - make MOD=1 BUILDOPENGL=no BUILDGTK=no HAVE_UI=no
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR} MOD=1 BUILDOPENGL=no BUILDGTK=no HAVE_UI=no
+  bundles:
+    - mtc.lv2
+  dependencies: []

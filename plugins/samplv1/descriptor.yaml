@@ -1,0 +1,18 @@
+plugin:
+  name: samplv1
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/samplv1.git
+  build:
+    - autoreconf -i
+    - ./configure --disable-jack --disable-lv2-ui-x11 --disable-lv2-ui-external --enable-lv2-port-event=no --prefix=/usr
+    - make
+  install:
+    - make install DESTDIR=${TARGET_DIR}
+  bundles:
+    - samplv1.lv2
+  dependencies:
+    - autoconf
+    - automake
+    - libtool

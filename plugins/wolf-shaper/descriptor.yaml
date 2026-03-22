@@ -1,0 +1,13 @@
+plugin:
+  name: wolf-shaper
+  version: master
+  source:
+    type: git
+    url: https://github.com/falkTX/wolf-shaper.git
+  build:
+    - make HAVE_OPENGL=false
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+  bundles:
+    - wolf-shaper.lv2
+  dependencies: []

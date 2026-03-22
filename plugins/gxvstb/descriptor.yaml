@@ -1,0 +1,15 @@
+plugin:
+  name: gxvstb
+  version: master
+  source:
+    type: git
+    url: https://github.com/brummer10/GxSuppaToneBender.lv2.git
+  build:
+    - make mod
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}
+  bundles:
+    - gx_vstb.lv2
+  modgui:
+    brand: Brummer
+  dependencies: []

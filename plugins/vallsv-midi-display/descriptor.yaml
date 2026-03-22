@@ -1,0 +1,13 @@
+plugin:
+  name: vallsv-midi-display
+  version: master
+  source:
+    type: git
+    url: https://github.com/vallsv/midi-display.lv2.git
+  build:
+    - make PREFIX=/usr
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+  bundles:
+    - midi-display.lv2
+  dependencies: []

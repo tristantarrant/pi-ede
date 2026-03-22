@@ -1,0 +1,14 @@
+plugin:
+  name: mod-neural-amp
+  version: main
+  source:
+    type: git
+    url: https://github.com/moddevices/mod-neural-amp.git
+  build:
+    - cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${PREFIX_DIR}
+    - cmake --build build -j2
+  install:
+    - cmake --install build
+  bundles:
+    - mod-neural-amp.lv2
+  dependencies: []

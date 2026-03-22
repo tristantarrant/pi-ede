@@ -1,0 +1,16 @@
+plugin:
+  name: screcord
+  version: master
+  source:
+    type: git
+    url: https://github.com/brummer10/screcord.lv2.git
+  build:
+    - make mod
+  install:
+    - make install DESTDIR=${TARGET_DIR} INSTALL_DIR=/usr/lib/lv2
+  bundles:
+    - sc_record.lv2
+    - sc_record_mini.lv2
+  modgui:
+    brand: Brummer
+  dependencies: []

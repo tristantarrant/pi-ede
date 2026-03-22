@@ -1,0 +1,13 @@
+plugin:
+  name: portal-lv2
+  version: master
+  source:
+    type: git
+    url: https://github.com/falkTX/portal-lv2.git
+  build:
+    - make
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+  bundles:
+    - portal.lv2
+  dependencies: []

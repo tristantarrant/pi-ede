@@ -1,0 +1,19 @@
+plugin:
+  name: max-gen-zwabo
+  version: master
+  source:
+    type: git
+    url: https://github.com/moddevices/max-gen-plugins.git
+  build:
+    - make
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+  bundles:
+    - zwabo-cozmic.lv2
+    - zwabo-mirrorz.lv2
+    - zwabo-stuttter.lv2
+    - zwabo-toggle_2in.lv2
+    - zwabo-xfade1to2st.lv2
+    - zwabo-zinvert_phase.lv2
+    - zwabo-ztoggle4.lv2
+  dependencies: []

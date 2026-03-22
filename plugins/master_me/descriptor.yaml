@@ -1,0 +1,13 @@
+plugin:
+  name: master_me
+  version: main
+  source:
+    type: git
+    url: https://github.com/trummerschlunk/master_me.git
+  build:
+    - make HAVE_DGL=false HAVE_OPENGL=false
+  install:
+    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+  bundles:
+    - master_me.lv2
+  dependencies: []

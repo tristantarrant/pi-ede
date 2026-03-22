@@ -1,0 +1,15 @@
+plugin:
+  name: dm-timewarp
+  version: main
+  source:
+    type: git
+    url: https://github.com/davemollen/dm-TimeWarp.git
+  build:
+    - source ~/.cargo/env && rustup default nightly
+    - cd lv2 && source ~/.cargo/env && cargo build --release && cd ..
+    - source ~/.cargo/env && rustup default stable
+  install:
+    - cd lv2 && cp -v target/release/*.so *.lv2/ && cp -rv *.lv2 ${LV2_DIR}/ && cd ..
+  bundles:
+    - dm-TimeWarp.lv2
+  dependencies: []
