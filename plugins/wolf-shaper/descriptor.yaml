@@ -7,7 +7,7 @@ plugin:
   build:
     - make HAVE_OPENGL=false
   install:
-    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+    - cp -rv bin/wolf-shaper.lv2 ${LV2_DIR}/
   bundles:
     - wolf-shaper.lv2
   dependencies: []

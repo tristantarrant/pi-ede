@@ -7,7 +7,7 @@ plugin:
   build:
     - make HAVE_CAIRO=false HAVE_GL=false
   install:
-    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+    - cp -rv bin/mod-step-sequencer.lv2 ${LV2_DIR}/
   bundles:
     - mod-step-sequencer.lv2
   dependencies: []
