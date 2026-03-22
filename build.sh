@@ -162,7 +162,7 @@ install() {
 
 package() {
   echo "=== Package: $NAME ==="
-  BUILD_DATE=$(date +%Y%m%d)
+  BUILD_DATE=$(git -C "$SOURCE_DIR" log -1 --format=%cd --date=format:%Y%m%d 2>/dev/null || date +%Y%m%d)
   PACKAGE_DIR="$WORK_DIR/packages"
   mkdir -p "$PACKAGE_DIR"
   for BUNDLE in $PLUGINS; do
