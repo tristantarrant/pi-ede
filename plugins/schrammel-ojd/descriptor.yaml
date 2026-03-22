@@ -1,13 +1,10 @@
 plugin:
   name: schrammel-ojd
-  version: master
+  version: update-all-dependencies
   source:
     type: git
     url: https://github.com/JanosGit/Schrammel_OJD.git
   build:
-    - git -C Ext/JUCE fetch origin a7d1e61a5511875dc8f345816fca94042ce074fb && git -C Ext/JUCE checkout a7d1e61a5511875dc8f345816fca94042ce074fb
-    - git -C Ext/Resvg4JUCE checkout -- . && git -C Ext/Resvg4JUCE fetch origin 6f48d37b33c41c38762fc31b863dd28dd3f8f407 && git -C Ext/Resvg4JUCE checkout 6f48d37b33c41c38762fc31b863dd28dd3f8f407 && git -C Ext/Resvg4JUCE/Ext/resvg fetch origin 3b4c6e52f0fa9b74836aef8cf854fb3625e2922e && git -C Ext/Resvg4JUCE/Ext/resvg checkout 3b4c6e52f0fa9b74836aef8cf854fb3625e2922e
-    - git -C Ext/JBPluginBase fetch origin 6ba9b4e3c61785f3ce36f53a2a61ca92e6be79af && git -C Ext/JBPluginBase checkout 6ba9b4e3c61785f3ce36f53a2a61ca92e6be79af
     - sed -i 's/if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")/if ((CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU") AND CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|i686|AMD64")/' Ext/Resvg4JUCE/CMakeLists.txt
     - export PATH="$HOME/.cargo/bin:$PATH" && cmake -S . -B bin -DBUILD_GUI=OFF -DBUILD_SSE=OFF -DCMAKE_BUILD_TYPE=Release
     - export PATH="$HOME/.cargo/bin:$PATH" && cmake --build bin -j2
