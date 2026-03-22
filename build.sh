@@ -206,7 +206,7 @@ generate_modgui() {
     [ -z "$ttl_file" ] && continue
 
     # Get plugin URI and display name
-    local uri=$(grep -B1 'a lv2:Plugin' "$bundle_dir/manifest.ttl" | grep -oP '<https?://[^>]+>' | head -1 | tr -d '<>')
+    local uri=$(grep -B1 'a lv2:Plugin' "$bundle_dir/manifest.ttl" | grep -oP '<[^>]+>' | grep -v 'lv2plug.in' | head -1 | tr -d '<>')
     [ -z "$uri" ] && continue
     local display_name=$(grep 'doap:name' "$ttl_file" | head -1 | grep -oP '"[^"]+"' | tr -d '"')
     [ -z "$display_name" ] && display_name="$plugin_short"
