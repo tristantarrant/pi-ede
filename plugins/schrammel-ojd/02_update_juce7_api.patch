@@ -1,0 +1,58 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -64,8 +64,8 @@ juce_add_plugin (OJD-${format}
+
+         ${ARGN})
+
+-# We want to compile the plugin with C++14
+-target_compile_features (OJD-${format} PRIVATE cxx_std_14)
++# We want to compile the plugin with C++20
++target_compile_features (OJD-${format} PRIVATE cxx_std_20)
+
+ # Gather some info regarding our git commit to inject them into a header file.
+ jb_add_git_version_info (OJD-${format})
+--- a/Source/OJDParameters.cpp
++++ b/Source/OJDParameters.cpp
+@@ -48,7 +48,7 @@ float OJDParameters::Sliders::Volume::dBValueFromRawValue (const std::atomic<flo
+ }
+
+ //================ String <-> value conversion =========================================================================
+-juce::String stringWithMaxLength (juce::String&& s, int maximumStringLength)
++static juce::String stringWithMaxLength (juce::String&& s, int maximumStringLength)
+ {
+     return maximumStringLength > 0 ? s.substring (0, maximumStringLength) : s;
+ }
+@@ -89,11 +89,11 @@ bool OJDParameters::Switches::Bypass::isActive (const std::atomic<float>& rawVal
+ juce::AudioProcessorValueTreeState::ParameterLayout OJDParameters::createParameterLayout()
+ {
+ #define MAKE_ROTARY_PARAMETER(Name, defaultValue) \
+-    std::make_unique<juce::AudioParameterFloat> (Sliders::Name::id, #Name, Sliders::displayRange, defaultValue)
++    std::make_unique<juce::AudioParameterFloat> (juce::ParameterID (Sliders::Name::id, 1), #Name, Sliders::displayRange, defaultValue)
+
+-#define MAKE_SWITCH_PARAMETER(Name, displayName)                                             \
+-    std::make_unique<juce::AudioParameterBool>  (Switches::Name::id, displayName, false, "", \
+-                                                 Switches::Name::stringFromBoolConversion,   \
++#define MAKE_SWITCH_PARAMETER(Name, displayName)                                                                    \
++    std::make_unique<juce::AudioParameterBool>  (juce::ParameterID (Switches::Name::id, 1), displayName, false, "", \
++                                                 Switches::Name::stringFromBoolConversion,                          \
+                                                  Switches::Name::boolFromStringConversion)
+
+     return juce::AudioProcessorValueTreeState::ParameterLayout (
+@@ -107,7 +107,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout OJDParameters::createParamet
+     });
+ }
+
+-juce::StringArray OJDParameters::getPresetMangagerParameters()
++juce::StringArray OJDParameters::getPresetManagerParameters()
+ {
+     return { Sliders::Drive::id, Sliders::Tone::id, Sliders::Volume::id, Switches::HpLp::id };
+ }
+--- a/Source/OJDParameters.h
++++ b/Source/OJDParameters.h
+@@ -99,5 +99,5 @@ struct OJDParameters
+      * The preset manager will listen to all parameters in this array. Changing those will make the
+      * preset state turn "dirty"
+      */
+-    static juce::StringArray getPresetMangagerParameters();
++    static juce::StringArray getPresetManagerParameters();
+ };
