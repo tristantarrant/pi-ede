@@ -193,7 +193,8 @@ generate_modgui() {
   local RESOURCE_DIR="$RESOLVED_DIR/data/modgui-resources"
   [ -d "$RESOURCE_DIR" ] || { echo "Warning: modgui resources not found at $RESOURCE_DIR"; return; }
 
-  for bundle_dir in "$LV2_DIR"/$PLUGINS; do
+  for bundle in $PLUGINS; do
+    local bundle_dir="$LV2_DIR/$bundle"
     [ -d "$bundle_dir" ] || continue
     [ -d "$bundle_dir/modgui" ] && continue
 
