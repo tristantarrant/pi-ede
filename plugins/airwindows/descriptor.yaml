@@ -13,4 +13,6 @@ plugin:
     - find build/lv2 -name "*.so" -exec ${PLUGIN_DIR}/make-bundle.sh {} build/bundles \;
     - cp -r build/bundles/*.lv2 ${LV2_DIR}
   bundles: []
+  modgui:
+    brand: Airwindows
   dependencies: []
