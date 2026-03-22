@@ -1,0 +1,10 @@
+--- a/plugins/sequencer/velocityhandler.hpp
++++ b/plugins/sequencer/velocityhandler.hpp
+@@ -1,6 +1,7 @@
+ #ifndef VELOCITY_HANDLER_HPP
+ #define VELOCITY_HANDLER_HPP
+
++#include <cstdint>
+ #include <cstdlib>
+
+ class VelocityHandler

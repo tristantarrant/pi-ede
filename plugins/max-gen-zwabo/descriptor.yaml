@@ -7,7 +7,7 @@ plugin:
   build:
     - make
   install:
-    - make install PREFIX=/usr DESTDIR=${TARGET_DIR}
+    - cp -rv bin/*.lv2 ${LV2_DIR}/
   bundles:
     - zwabo-cozmic.lv2
     - zwabo-mirrorz.lv2
