@@ -5,9 +5,9 @@ plugin:
     type: git
     url: https://github.com/JanosGit/Schrammel_OJD.git
   build:
-    - git -C Ext/JUCE checkout a7d1e61a5511875dc8f345816fca94042ce074fb
-    - git -C Ext/Resvg4JUCE checkout 6f48d37b33c41c38762fc31b863dd28dd3f8f407
-    - git -C Ext/JBPluginBase checkout 6ba9b4e3c61785f3ce36f53a2a61ca92e6be79af
+    - git -C Ext/JUCE fetch origin a7d1e61a5511875dc8f345816fca94042ce074fb && git -C Ext/JUCE checkout a7d1e61a5511875dc8f345816fca94042ce074fb
+    - git -C Ext/Resvg4JUCE fetch origin 6f48d37b33c41c38762fc31b863dd28dd3f8f407 && git -C Ext/Resvg4JUCE checkout 6f48d37b33c41c38762fc31b863dd28dd3f8f407
+    - git -C Ext/JBPluginBase fetch origin 6ba9b4e3c61785f3ce36f53a2a61ca92e6be79af && git -C Ext/JBPluginBase checkout 6ba9b4e3c61785f3ce36f53a2a61ca92e6be79af
     - export PATH="$HOME/.cargo/bin:$PATH" && cmake -S . -B bin -DBUILD_GUI=OFF -DBUILD_SSE=OFF -DCMAKE_BUILD_TYPE=Release
     - export PATH="$HOME/.cargo/bin:$PATH" && cmake --build bin -j2
   install:
