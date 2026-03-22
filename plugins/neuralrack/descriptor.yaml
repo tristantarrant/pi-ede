@@ -10,4 +10,8 @@ plugin:
     - make install INSTALL_DIR=${LV2_DIR}
   bundles:
     - Neuralrack.lv2
+  modgui:
+    brand: Brummer
+    color: black
+    knob: gold
   dependencies: []
