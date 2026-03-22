@@ -9,5 +9,5 @@ plugin:
   install:
     - make install INSTALL_DIR=${LV2_DIR}
   bundles:
-    - NeuralRack.lv2
+    - Neuralrack.lv2
   dependencies: []
