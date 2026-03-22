@@ -1,0 +1,13 @@
+plugin:
+  name: neuralrack
+  version: main
+  source:
+    type: git
+    url: https://github.com/brummer10/NeuralRack.git
+  build:
+    - make lv2
+  install:
+    - make install INSTALL_DIR=${LV2_DIR}
+  bundles:
+    - NeuralRack.lv2
+  dependencies: []
