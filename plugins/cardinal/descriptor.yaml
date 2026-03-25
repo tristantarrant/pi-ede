@@ -6,19 +6,22 @@ plugin:
     url: https://github.com/DISTRHO/Cardinal.git
   build:
     - git submodule update --init --recursive
-    - make mini HEADLESS=true NOOPT=true
+    - make lv2 mini HEADLESS=true NOOPT=true
+    - make gen HEADLESS=true NOOPT=true
+    - cp -r src/MOD/Cardinal.lv2/* bin/Cardinal.lv2/
+    - cp -r src/MOD/CardinalFX.lv2/* bin/CardinalFX.lv2/
+    - cp -r src/MOD/CardinalMini.lv2/* bin/CardinalMini.lv2/
   install:
+    - cp -r bin/Cardinal.lv2 ${LV2_DIR}/
+    - cp -r bin/CardinalFX.lv2 ${LV2_DIR}/
     - cp -r bin/CardinalMini.lv2 ${LV2_DIR}/
   bundles:
+    - Cardinal.lv2
+    - CardinalFX.lv2
     - CardinalMini.lv2
   dependencies:
     - libdbus-1-dev
-    - libgl1-mesa-dev
     - liblo-dev
     - libfftw3-dev
     - libmagic-dev
     - libsndfile1-dev
-    - libx11-dev
-    - libxcursor-dev
-    - libxext-dev
-    - libxrandr-dev
