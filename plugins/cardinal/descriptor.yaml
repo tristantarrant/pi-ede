@@ -1,0 +1,24 @@
+plugin:
+  name: cardinal
+  version: 24.12
+  source:
+    type: git
+    url: https://github.com/DISTRHO/Cardinal.git
+  build:
+    - git submodule update --init --recursive
+    - make mini HEADLESS=true NOOPT=true
+  install:
+    - cp -r bin/CardinalMini.lv2 ${LV2_DIR}/
+  bundles:
+    - CardinalMini.lv2
+  dependencies:
+    - libdbus-1-dev
+    - libgl1-mesa-dev
+    - liblo-dev
+    - libfftw3-dev
+    - libmagic-dev
+    - libsndfile1-dev
+    - libx11-dev
+    - libxcursor-dev
+    - libxext-dev
+    - libxrandr-dev
