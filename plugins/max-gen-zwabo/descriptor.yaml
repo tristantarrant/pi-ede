@@ -5,7 +5,7 @@ plugin:
     type: git
     url: https://github.com/moddevices/max-gen-plugins.git
   build:
-    - make
+    - make BUILD_LV2=true BUILD_CLAP= BUILD_JACK= BUILD_VST2= BUILD_VST3=
   install:
     - cp -rv bin/*.lv2 ${LV2_DIR}/
   bundles:

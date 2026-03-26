@@ -5,7 +5,7 @@ plugin:
     type: git
     url: https://github.com/falkTX/wolf-shaper.git
   build:
-    - make HAVE_OPENGL=false
+    - make BUILD_LV2=true BUILD_CLAP= BUILD_JACK= BUILD_VST2= BUILD_VST3= HAVE_OPENGL=false
   install:
     - cp -rv bin/wolf-shaper.lv2 ${LV2_DIR}/
   bundles:
