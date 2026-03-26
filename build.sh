@@ -263,10 +263,21 @@ for idx, sym, name in results:
     cp "$RESOURCE_DIR/pedals/default-screenshot.png" "$bundle_dir/modgui/screenshot-$lower_name.png"
     cp "$RESOURCE_DIR/pedals/default-thumbnail.png" "$bundle_dir/modgui/thumbnail-$lower_name.png"
 
-    # CSS
-    cat "$RESOURCE_DIR/pedals/$model/$model.css" > "$bundle_dir/modgui/stylesheet-$lower_name.css" 2>/dev/null || \
-    cat "$RESOURCE_DIR/pedals/boxy/boxy.css" > "$bundle_dir/modgui/stylesheet-$lower_name.css"
-    [ "$num_ports" -gt 0 ] && cat "$RESOURCE_DIR/knobs/boxy/boxy.css" >> "$bundle_dir/modgui/stylesheet-$lower_name.css"
+    # Copy knob images
+    if [ "$num_ports" -gt 0 ]; then
+      mkdir -p "$bundle_dir/modgui/knobs/boxy"
+      cp "$RESOURCE_DIR/knobs/boxy/$knob_color.png" "$bundle_dir/modgui/knobs/boxy/" 2>/dev/null
+      cp "$RESOURCE_DIR/knobs/boxy/boxy.png" "$bundle_dir/modgui/knobs/boxy/" 2>/dev/null
+    fi
+
+    # CSS — rewrite absolute /resources/ paths to relative
+    {
+      cat "$RESOURCE_DIR/pedals/$model/$model.css" 2>/dev/null || \
+      cat "$RESOURCE_DIR/pedals/boxy/boxy.css"
+    } | sed 's|url(/resources/|url(|g' > "$bundle_dir/modgui/stylesheet-$lower_name.css"
+    if [ "$num_ports" -gt 0 ]; then
+      sed 's|url(/resources/|url(|g' "$RESOURCE_DIR/knobs/boxy/boxy.css" >> "$bundle_dir/modgui/stylesheet-$lower_name.css"
+    fi
 
     # HTML template
     if [ "$num_ports" -eq 0 ]; then
