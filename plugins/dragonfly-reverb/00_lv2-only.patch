@@ -1,0 +1,47 @@
+diff --git a/plugins/dragonfly-early-reflections/Makefile b/plugins/dragonfly-early-reflections/Makefile
+--- a/plugins/dragonfly-early-reflections/Makefile
++++ b/plugins/dragonfly-early-reflections/Makefile
+@@ -79,7 +79,7 @@
+
+ # Enable all possible plugin types
+
+-TARGETS = jack lv2_sep vst2 vst3 clap
++TARGETS = lv2_dsp
+
+ all: $(TARGETS)
+
+diff --git a/plugins/dragonfly-hall-reverb/Makefile b/plugins/dragonfly-hall-reverb/Makefile
+--- a/plugins/dragonfly-hall-reverb/Makefile
++++ b/plugins/dragonfly-hall-reverb/Makefile
+@@ -79,7 +79,7 @@
+
+ # Enable all possible plugin types
+
+-TARGETS = jack lv2_sep vst2 vst3 clap
++TARGETS = lv2_dsp
+
+ all: $(TARGETS)
+
+diff --git a/plugins/dragonfly-plate-reverb/Makefile b/plugins/dragonfly-plate-reverb/Makefile
+--- a/plugins/dragonfly-plate-reverb/Makefile
++++ b/plugins/dragonfly-plate-reverb/Makefile
+@@ -79,7 +79,7 @@
+
+ # Enable all possible plugin types
+
+-TARGETS = jack lv2_sep vst2 vst3 clap
++TARGETS = lv2_dsp
+
+ all: $(TARGETS)
+
+diff --git a/plugins/dragonfly-room-reverb/Makefile b/plugins/dragonfly-room-reverb/Makefile
+--- a/plugins/dragonfly-room-reverb/Makefile
++++ b/plugins/dragonfly-room-reverb/Makefile
+@@ -79,7 +79,7 @@
+
+ # Enable all possible plugin types
+
+-TARGETS = jack lv2_sep vst2 vst3 clap
++TARGETS = lv2_dsp
+
+ all: $(TARGETS)

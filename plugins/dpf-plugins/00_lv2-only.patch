@@ -1,0 +1,52 @@
+--- a/Makefile
++++ b/Makefile
+@@ -37,32 +37,32 @@
+
+ plugins: dgl
+ 	# Kars
+-	$(MAKE) all -C plugins/Kars
++	$(MAKE) lv2_dsp -C plugins/Kars
+
+ 	# Mini-Series
+-	$(MAKE) all -C plugins/3BandEQ
+-	$(MAKE) all -C plugins/3BandSplitter
+-	$(MAKE) all -C plugins/PingPongPan
++	$(MAKE) lv2_dsp -C plugins/3BandEQ
++	$(MAKE) lv2_dsp -C plugins/3BandSplitter
++	$(MAKE) lv2_dsp -C plugins/PingPongPan
+
+ 	# ndc-Plugs
+-	$(MAKE) all -C plugins/AmplitudeImposer
+-	$(MAKE) all -C plugins/CycleShifter
+-	$(MAKE) all -C plugins/SoulForce
++	$(MAKE) lv2_dsp -C plugins/AmplitudeImposer
++	$(MAKE) lv2_dsp -C plugins/CycleShifter
++	$(MAKE) lv2_dsp -C plugins/SoulForce
+
+ 	# MVerb
+-	$(MAKE) all -C plugins/MVerb
++	$(MAKE) lv2_dsp -C plugins/MVerb
+
+ 	# Nekobi
+-	$(MAKE) all -C plugins/Nekobi
++	$(MAKE) lv2_dsp -C plugins/Nekobi
+
+ 	# Max-Gen stuff
+-	$(MAKE) all -C plugins/bitcrush
+-	$(MAKE) all -C plugins/freeverb
+-	$(MAKE) all -C plugins/gigaverb
+-	$(MAKE) all -C plugins/pitchshift
++	$(MAKE) lv2_dsp -C plugins/bitcrush
++	$(MAKE) lv2_dsp -C plugins/freeverb
++	$(MAKE) lv2_dsp -C plugins/gigaverb
++	$(MAKE) lv2_dsp -C plugins/pitchshift
+
+ ifeq ($(HAVE_OPENGL),true)
+ 	# glBars (needs OpenGL)
+-	$(MAKE) all -C plugins/glBars
++	$(MAKE) lv2_dsp -C plugins/glBars
+
+ 	# ProM (needs OpenGL, ProjectM can be from system or vendored)
+-	$(MAKE) all -C plugins/ProM
++	$(MAKE) lv2_dsp -C plugins/ProM
+ endif # HAVE_OPENGL
