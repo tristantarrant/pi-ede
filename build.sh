@@ -260,19 +260,48 @@ for idx, sym, name in results:
     mkdir -p "$bundle_dir/modgui/pedals/$model"
     [ -f "$RESOURCE_DIR/pedals/$model/$box_color.png" ] && cp "$RESOURCE_DIR/pedals/$model/$box_color.png" "$bundle_dir/modgui/pedals/$model/"
     [ -f "$RESOURCE_DIR/pedals/footswitch.png" ] && cp "$RESOURCE_DIR/pedals/footswitch.png" "$bundle_dir/modgui/pedals/"
-    # Generate screenshot from pedal background + brand/label text
+    # Generate screenshot from pedal background + brand/label + knobs
     local pedal_bg="$RESOURCE_DIR/pedals/$model/$box_color.png"
     [ ! -f "$pedal_bg" ] && pedal_bg="$RESOURCE_DIR/pedals/boxy/$box_color.png"
     local scrn="$bundle_dir/modgui/screenshot-$lower_name.png"
     local thumb="$bundle_dir/modgui/thumbnail-$lower_name.png"
     if [ -f "$pedal_bg" ] && command -v convert >/dev/null 2>&1; then
-      local brand_y=170 label_y=280
-      [ "$model" = "boxy-small" ] && brand_y=20 && label_y=85
+      local brand_y=170 label_y=280 knob_y=40
+      [ "$model" = "boxy-small" ] && brand_y=20 && label_y=85 && knob_y=0
+      # Start with pedal background + text
       convert "$pedal_bg" \
         -font Helvetica-Bold -pointsize 16 -fill black \
         -gravity North -annotate +0+"$brand_y" "$brand" \
         -pointsize 14 -annotate +0+"$label_y" "$display_name" \
         "$scrn"
+      # Composite knobs if the plugin has control ports
+      if [ "$num_ports" -gt 0 ]; then
+        local knob_sprite="$RESOURCE_DIR/knobs/boxy/$knob_color.png"
+        if [ -f "$knob_sprite" ]; then
+          local sprite_h=$(identify -format '%h' "$knob_sprite")
+          local frame_sz=$sprite_h
+          local knob_frame=$(mktemp /tmp/knob-XXXXXX.png)
+          # Extract middle frame (~50% rotation) from sprite strip
+          convert "$knob_sprite" -crop "${frame_sz}x${frame_sz}+$((32 * frame_sz))+0" +repage "$knob_frame"
+          local bg_w=$(identify -format '%w' "$pedal_bg")
+          local max_knob=55
+          [ "$num_ports" -le 2 ] && max_knob=70
+          local avail=$((bg_w - 20))
+          local per_knob=$((avail / num_ports))
+          [ "$per_knob" -gt "$max_knob" ] && per_knob=$max_knob
+          local total_w=$((per_knob * num_ports))
+          local start_x=$(( (bg_w - total_w) / 2 ))
+          # Scale the knob frame once
+          local scaled_knob=$(mktemp /tmp/knob-scaled-XXXXXX.png)
+          convert "$knob_frame" -resize "${per_knob}x${per_knob}" "$scaled_knob"
+          # Composite each knob position sequentially
+          for i in $(seq 0 $((num_ports - 1))); do
+            local kx=$((start_x + i * per_knob))
+            convert "$scrn" "$scaled_knob" -gravity NorthWest -geometry "+${kx}+${knob_y}" -composite "$scrn"
+          done
+          rm -f "$knob_frame" "$scaled_knob"
+        fi
+      fi
       convert "$scrn" -resize 64x64 "$thumb"
     else
       cp "$RESOURCE_DIR/pedals/default-screenshot.png" "$scrn"
