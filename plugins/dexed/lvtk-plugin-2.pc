@@ -6,5 +6,5 @@ Name: lvtk-plugin-2
 Version: 1.2.0
 Description: LV2 Toolkit Plugin Library (v1 compat)
 Requires: lv2
-Libs: -L${libdir} -llvtk_plugin-1
+Libs: ${libdir}/lvtk_plugin.o
 Cflags: -I${includedir}/lvtk-1

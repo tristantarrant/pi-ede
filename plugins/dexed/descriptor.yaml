@@ -9,7 +9,7 @@ plugin:
     - mkdir -p ${PREFIX_DIR}/include/lvtk-1/lvtk
     - cp -r /tmp/lvtk-1/lvtk/* ${PREFIX_DIR}/include/lvtk-1/lvtk/
     - mkdir -p ${PREFIX_DIR}/lib
-    - g++ ${CXXFLAGS} -fPIC -shared -o ${PREFIX_DIR}/lib/liblvtk_plugin-1.so -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2) /tmp/lvtk-1/src/plugin.cpp 2>/dev/null || true
+    - g++ ${CXXFLAGS} -fPIC -c -o ${PREFIX_DIR}/lib/lvtk_plugin.o -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2) /tmp/lvtk-1/src/plugin.cpp
     - mkdir -p ${PREFIX_DIR}/lib/pkgconfig
     - cp ${PLUGIN_DIR}/lvtk-plugin-2.pc ${PREFIX_DIR}/lib/pkgconfig/lvtk-plugin-2.pc && sed -i "s|@PREFIX@|${PREFIX_DIR}|g" ${PREFIX_DIR}/lib/pkgconfig/lvtk-plugin-2.pc
     - cd src

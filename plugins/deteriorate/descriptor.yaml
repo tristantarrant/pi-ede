@@ -9,9 +9,9 @@ plugin:
     - mkdir -p ${PREFIX_DIR}/include/lvtk-1/lvtk
     - cp -r /tmp/lvtk-1/lvtk/* ${PREFIX_DIR}/include/lvtk-1/lvtk/
     - mkdir -p ${PREFIX_DIR}/lib
-    - g++ ${CXXFLAGS} -fPIC -shared -o ${PREFIX_DIR}/lib/liblvtk_plugin-1.so -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2) /tmp/lvtk-1/src/plugin.cpp 2>/dev/null || true
-    - LVTK_CFLAGS="-I${PREFIX_DIR}/include -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2)" && LVTK_LIBS="-L${PREFIX_DIR}/lib -llvtk_plugin-1" && for p in downsampler_mono downsampler_stereo; do g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $LVTK_CFLAGS -DPLUGIN_CLASS=$p -DURI_PREFIX=\"http://github.com/blablack/deteriorate-lv2/\" -DPLUGIN_URI_SUFFIX="\"$p\"" -DPLUGIN_HEADER="\"src/$p.hpp\"" -o deteriorate.lv2/$p.so src/$p.cpp $LVTK_LIBS && echo "Built $p"; done
-    - LVTK_CFLAGS="-I${PREFIX_DIR}/include -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2)" && LVTK_LIBS="-L${PREFIX_DIR}/lib -llvtk_plugin-1" && for p in granulator_mono granulator_stereo; do g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $LVTK_CFLAGS -DPLUGIN_CLASS=$p -DURI_PREFIX=\"http://github.com/blablack/deteriorate-lv2/\" -DPLUGIN_URI_SUFFIX="\"$p\"" -DPLUGIN_HEADER="\"src/$p.hpp\"" -o deteriorate.lv2/$p.so src/$p.cpp src/envgen.cpp $LVTK_LIBS && echo "Built $p"; done
+    - g++ ${CXXFLAGS} -fPIC -c -o ${PREFIX_DIR}/lib/lvtk_plugin.o -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2) /tmp/lvtk-1/src/plugin.cpp
+    - LVTK_CFLAGS="-I${PREFIX_DIR}/include -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2)" && LVTK_OBJ="${PREFIX_DIR}/lib/lvtk_plugin.o" && for p in downsampler_mono downsampler_stereo; do g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $LVTK_CFLAGS -DPLUGIN_CLASS=$p -DURI_PREFIX=\"http://github.com/blablack/deteriorate-lv2/\" -DPLUGIN_URI_SUFFIX="\"$p\"" -DPLUGIN_HEADER="\"src/$p.hpp\"" -o deteriorate.lv2/$p.so src/$p.cpp $LVTK_OBJ && echo "Built $p"; done
+    - LVTK_CFLAGS="-I${PREFIX_DIR}/include -I${PREFIX_DIR}/include/lvtk-1 $(pkg-config --cflags lv2)" && LVTK_OBJ="${PREFIX_DIR}/lib/lvtk_plugin.o" && for p in granulator_mono granulator_stereo; do g++ ${CXXFLAGS} -fPIC -shared -std=c++11 -I. -I./src $LVTK_CFLAGS -DPLUGIN_CLASS=$p -DURI_PREFIX=\"http://github.com/blablack/deteriorate-lv2/\" -DPLUGIN_URI_SUFFIX="\"$p\"" -DPLUGIN_HEADER="\"src/$p.hpp\"" -o deteriorate.lv2/$p.so src/$p.cpp src/envgen.cpp $LVTK_OBJ && echo "Built $p"; done
   install:
     - cp -r deteriorate.lv2 ${LV2_DIR}/
   bundles:
