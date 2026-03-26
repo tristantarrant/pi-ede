@@ -260,8 +260,24 @@ for idx, sym, name in results:
     mkdir -p "$bundle_dir/modgui/pedals/$model"
     [ -f "$RESOURCE_DIR/pedals/$model/$box_color.png" ] && cp "$RESOURCE_DIR/pedals/$model/$box_color.png" "$bundle_dir/modgui/pedals/$model/"
     [ -f "$RESOURCE_DIR/pedals/footswitch.png" ] && cp "$RESOURCE_DIR/pedals/footswitch.png" "$bundle_dir/modgui/pedals/"
-    cp "$RESOURCE_DIR/pedals/default-screenshot.png" "$bundle_dir/modgui/screenshot-$lower_name.png"
-    cp "$RESOURCE_DIR/pedals/default-thumbnail.png" "$bundle_dir/modgui/thumbnail-$lower_name.png"
+    # Generate screenshot from pedal background + brand/label text
+    local pedal_bg="$RESOURCE_DIR/pedals/$model/$box_color.png"
+    [ ! -f "$pedal_bg" ] && pedal_bg="$RESOURCE_DIR/pedals/boxy/$box_color.png"
+    local scrn="$bundle_dir/modgui/screenshot-$lower_name.png"
+    local thumb="$bundle_dir/modgui/thumbnail-$lower_name.png"
+    if [ -f "$pedal_bg" ] && command -v convert >/dev/null 2>&1; then
+      local brand_y=170 label_y=280
+      [ "$model" = "boxy-small" ] && brand_y=20 && label_y=85
+      convert "$pedal_bg" \
+        -font Helvetica-Bold -pointsize 16 -fill black \
+        -gravity North -annotate +0+"$brand_y" "$brand" \
+        -pointsize 14 -annotate +0+"$label_y" "$display_name" \
+        "$scrn"
+      convert "$scrn" -resize 64x64 "$thumb"
+    else
+      cp "$RESOURCE_DIR/pedals/default-screenshot.png" "$scrn"
+      cp "$RESOURCE_DIR/pedals/default-thumbnail.png" "$thumb"
+    fi
 
     # Copy knob images
     if [ "$num_ports" -gt 0 ]; then
