@@ -375,6 +375,30 @@ HTMLEOF
 
 clean() {
   rm -rf "$SOURCE_DIR"
+  rm -f "$WORK_DIR/build/.stamp-$NAME"
+}
+
+compute_build_sha() {
+  local sha=""
+  # Source commit SHA (if git repo exists)
+  if [ -d "$SOURCE_DIR/.git" ]; then
+    sha=$(git -C "$SOURCE_DIR" rev-parse HEAD 2>/dev/null)
+  fi
+  # Hash the descriptor and patches to detect build rule changes
+  local config_hash=$(cat "$PLUGIN_DIR/descriptor.yaml" "$PLUGIN_DIR"/*.patch 2>/dev/null | sha1sum | cut -d' ' -f1)
+  echo "${sha}-${config_hash}"
+}
+
+is_up_to_date() {
+  local stamp_file="$WORK_DIR/build/.stamp-$NAME"
+  [ ! -f "$stamp_file" ] && return 1
+  local current_sha=$(compute_build_sha)
+  local stored_sha=$(cat "$stamp_file")
+  [ "$current_sha" = "$stored_sha" ]
+}
+
+save_build_sha() {
+  compute_build_sha > "$WORK_DIR/build/.stamp-$NAME"
 }
 
 ### Environment variables
@@ -418,6 +442,11 @@ for PLUGIN in "$@"; do
       FAILED_PLUGINS+=("$PLUGIN (download)")
       continue
     fi
+    if is_up_to_date; then
+      echo "=== Up to date: $NAME (skipping) ==="
+      SUCCEEDED=$((SUCCEEDED + 1))
+      continue
+    fi
     prepare "$DESC"
     if ! build "$DESC"; then
       FAILED_PLUGINS+=("$PLUGIN (build)")
@@ -429,6 +458,7 @@ for PLUGIN in "$@"; do
     fi
     generate_modgui
     package
+    save_build_sha
     SUCCEEDED=$((SUCCEEDED + 1))
   else
     echo "Plugin $PLUGIN doesn't have a descriptor"
