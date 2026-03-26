@@ -6,8 +6,8 @@ plugin:
     url: https://github.com/DISTRHO/Cardinal.git
   build:
     - git submodule update --init --recursive
-    - make lv2 mini HEADLESS=true NOOPT=true
-    - make gen HEADLESS=true NOOPT=true
+    - make -j2 lv2 mini HEADLESS=true NOOPT=true
+    - make -j2 gen HEADLESS=true NOOPT=true
     - cp -r src/MOD/Cardinal.lv2/* bin/Cardinal.lv2/
     - cp -r src/MOD/CardinalFX.lv2/* bin/CardinalFX.lv2/
     - cp -r src/MOD/CardinalMini.lv2/* bin/CardinalMini.lv2/
